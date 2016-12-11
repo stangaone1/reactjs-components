@@ -5,7 +5,6 @@ var packageJSON = require('./package.json');
 var appVersion = packageJSON.version;
 var appName = packageJSON.name;
 var _ = require('lodash');
-require('@kalon/mylocal-config');
 
 const PORT = 3003;
 
@@ -34,7 +33,6 @@ config.plugins = [
   new webpack.DefinePlugin({
     __DEV__: JSON.stringify(process.env.NODE_ENV === 'development' || true),
     __PROD__: JSON.stringify(process.env.NODE_ENV === 'production' || false),
-    CONFIG: JSON.stringify(_.pick(process.env, 'API_URL')),
   }),
   new ExtractTextPlugin(config.css),
 ];
@@ -170,7 +168,7 @@ if (env === 'production') {
 module.exports = {
   context:path.join(__dirname, 'basis'),
   entry: {
-    'mylocal-components': 'mylocal.components.js',
+    'components': 'components.js',
   },
   output: {
     path: 'dist',
