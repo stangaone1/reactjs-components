@@ -1,0 +1,28 @@
+@import '~assets/styles/settings/variables';
+
+.InputMultipleAuthors {
+  // component style goes here;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li:not(:first-of-type) {
+    margin-top: 15px;
+  }
+
+  .InputField {
+    margin-bottom: 15px;
+  }
+
+  &-add, &-remove {
+    cursor: pointer;
+    color: $color-mariner;
+    font-family: $font-main;
+    font-size: 13px;
+    font-weight: $fw-bold;
+
+    &--disabled {
+      color: $color-silver;
+    }
+  }
+}

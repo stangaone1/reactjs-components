@@ -1,0 +1,115 @@
+@import '~assets/styles/settings/colors';
+
+$select-background: $color-white;
+$border-color: $color-silver;
+$select-color: $color-tundora;
+$select-border: $color-mercury;
+$select-hovered-option: $color-mercury;
+$select-group-color: $color-mine-shaft;
+$border-radius: 17px;
+
+.SelectSearch {
+  color: $select-color;
+
+  &--open {
+    .SelectSearch-options {
+      display: block;
+    }
+
+    .Select-InputLabel-Arrow {
+      transform: rotate(180deg);
+      transition: 300ms;
+    }
+  }
+
+  &-select {
+    position: relative;
+    cursor: pointer;
+    background: $select-background;
+  }
+
+  &-options {
+    padding: 10px 0;
+    width: 100%;
+    border: 1px solid $border-color;
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    z-index: 100;
+    border-radius: $border-radius;
+    display: none;
+    background: $select-background;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li:not(.SelectSearch-optionGroup) {
+        padding: 7px 20px;
+        cursor: pointer;
+
+        &:hover {
+          background: $select-hovered-option;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $select-border;
+        }
+      }
+    }
+
+    > ul {
+      max-height: 300px;
+      overflow: auto;
+    }
+
+    .SelectSearch-optionGroup {
+      span {
+        padding: 7px 20px;
+        border-top: 1px solid $select-border;
+        border-bottom: 1px solid $select-border;
+        display: block;
+        color: $select-group-color;
+        font-weight: bold;
+        cursor: default;
+      }
+
+      &:first-child {
+        span {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  &--noOptions {
+    text-align: center;
+  }
+
+  &-values {
+    margin: 30px 0 0;
+  }
+
+  .Select-InputLabel {
+    padding: 7px 34px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    line-height: 1;
+
+    .Icon {
+      width: 15px;
+      height: 16px;
+      position: absolute;
+      top: 8px;
+      left: 10px;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: $select-color;
+  }
+}

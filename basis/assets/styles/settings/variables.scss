@@ -1,0 +1,29 @@
+// ------------------------------------ //
+//  VARIABLES / SETTINGS (project wide)
+// ------------------------------------ //
+
+// base colors
+@import 'colors.scss';
+
+// font families
+$font-main: 'Roboto', sans-serif;
+$font-secondary: 'Arial', sans-serif;
+
+// @TODO: refactor this
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+$fw-bolder: 900;
+
+$fs-xxs: 11px;
+$fs-xs: 12px;
+$fs-s: 13px;
+$fs-m: 14px;
+$fs-l: 18px;
+$fs-xl: 20px;
+$fs-xxl: 22px;
+$fs-xxxl: 24px;
+$fs-xxxll: 32px;
+
+$item-color--selected: $color-azure-radiance;

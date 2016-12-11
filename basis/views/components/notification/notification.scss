@@ -1,0 +1,110 @@
+/*------------------------------------*\
+    Notification component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$notification-success-border-color: $color-jungle-green;
+$notification-success-bg-color: $color-aero-blue;
+$notification-success-color: $color-dove-gray;
+
+$notification-warning-border-color: $color-carnation;
+$notification-warning-bg-color: $color-chablis;
+$notification-warning-color: $color-dove-gray;
+
+$notification-info-border-color: $color-lightning-yellow;
+$notification-info-bg-color: $color-quarter-pearl-lusta;
+$notification-info-color: $color-dove-gray;
+
+$notification-icon-size: 20px;
+
+.Notification {
+  position: relative;
+
+  display: block;
+  padding: 12px 15px;
+  margin: 10px 0;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+  &--success {
+    background: $notification-success-bg-color;
+    border: 1px solid $notification-success-border-color;
+    color: $notification-success-color;
+
+    .Notification-close {
+      fill: $notification-success-border-color;
+    }
+  }
+
+  &--warning {
+    background: $notification-warning-bg-color;
+    border: 1px solid $notification-warning-border-color;
+
+    color: $notification-warning-color;
+
+    .Notification-close {
+      fill: $notification-warning-border-color;
+    }
+  }
+
+  &--info {
+    background: $notification-info-bg-color;
+    border: 1px solid $notification-info-border-color;
+
+    color: $notification-info-color;
+
+    .Notification-close {
+      fill: $notification-info-border-color;
+    }
+  }
+}
+
+.Notification-text {
+  vertical-align: middle;
+}
+.Notification-icon {
+  width: $notification-icon-size;
+  height: $notification-icon-size;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+.Notification-close  {
+  position: absolute;
+
+  top: 50%;
+  right: 15px;
+
+  width: 8px;
+  height: 8px;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+  user-select: none;
+}
+
+// notification animations
+.notification-enter {
+  transform: scaleY(.5);
+  opacity: 0;
+}
+
+.notification-enter.notification-enter-active {
+  opacity: 1;
+  transition: opacity 175ms ease-in;
+}
+
+.notification-leave {
+  transform: scaleY(.5);
+  opacity: 1;
+}
+
+.notification-leave.notification-leave-active {
+  opacity: 0.01;
+  transform: scaleY(0);
+  transition: opacity 300ms ease-in;
+}

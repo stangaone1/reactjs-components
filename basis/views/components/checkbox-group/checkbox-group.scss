@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    CheckboxGroup component
+\*------------------------------------*/
+
+$checkbox-group-input-width: 17px;
+$checkbox-group-input-margin: 10px;
+
+.CheckboxGroup-parent {
+  margin-bottom: 15px;
+
+  font-weight: bold;
+}
+
+.CheckboxGroup-item {
+  margin-bottom: 15px;
+
+  padding-left: $checkbox-group-input-margin + $checkbox-group-input-width;
+}

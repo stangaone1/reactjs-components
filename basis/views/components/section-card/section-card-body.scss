@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    SectionCardBody component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/variables";
+
+.SectionCardBody{
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.SectionCardNotifications {
+  width: 100%;
+  text-align: center;
+}
+
+.SectionCardNotification{
+  display: inline-block;
+
+  width: 50%;
+  &:first-child {
+    border-right: 1px solid #e1e1e1;
+  }
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+.SectionCardBody-content {
+  margin-bottom: 40px;
+
+  font-size: $fs-xs;
+  font-weight: $fw-normal;
+  color: $color-gray;
+}
+
+.SectionCardNotification-title {
+  margin-bottom: 30px;
+
+  font-size: $fs-s;
+  font-weight: $fw-normal;
+  color: $color-mine-shaft;
+}
+
+.SectionCardNotification-content {
+  font-size: $fs-xxxll;
+  font-weight: $fw-medium;
+  color: $color-lightning-yellow;
+}

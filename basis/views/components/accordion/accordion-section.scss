@@ -1,0 +1,129 @@
+/*------------------------------------*\
+    Accordion section
+\*------------------------------------*/
+
+@import '~assets/styles/settings/colors';
+
+$accordion-border-color: #ebebeb;
+$accordion-body-background: $color-alabaster;
+$accordion-arrow-border-color: $color-silver;
+
+.AccordionSection {
+  position: relative;
+
+  width: 100%;
+
+  background-color: $accordion-body-background;
+
+  &:last-child .AccordionSectionHeader {
+    border-bottom: 0;
+  }
+
+  &:last-child .AccordionSectionBody-content {
+    border-top: 1px solid $accordion-border-color;
+    border-bottom: 0;
+  }
+
+  &:first-child .AccordionSectionHeader {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+.AccordionSectionHeader {
+  padding: 20px 30px;
+
+  border-bottom: 1px solid $accordion-border-color;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: all .1s;
+
+  &-title {
+    padding-left: 32px;
+    margin: 0;
+
+    overflow: hidden;
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    &::before,
+    &::after {
+      content: '';
+
+      position: absolute;
+      left: 32px;
+
+      box-sizing: content-box;
+      width: 10px;
+      height: 10px;
+
+      transform: translate(0, -3px) rotate(-135deg);
+      transition: all .4s;
+    }
+
+    &::after {
+      border-top: 2px solid $accordion-arrow-border-color;
+      border-left: 2px solid $accordion-arrow-border-color;
+    }
+  }
+
+  .NotificationBubble{
+    top: 15px;
+    right: 10px;
+  }
+}
+
+.AccordionSectionBody {
+  position: relative;
+
+  height: 0;
+
+  overflow: auto;
+
+  &-content {
+    position: relative;
+
+    height: 100%;
+    padding: 30px;
+    overflow: auto;
+
+    border-bottom: 1px solid $accordion-border-color;
+  }
+}
+
+.AccordionSection--open {
+  .AccordionSectionBody {
+    height: auto;
+  }
+
+  .AccordionSectionHeader {
+    &-title {
+      &::before,
+      &::after {
+        transform: translate(0, -3px) rotate(45deg) translate(30%, 30%);
+      }
+    }
+  }
+}
+
+//used for accordions with filters
+.AccordionSectionBody {
+  .CheckboxGroup:last-child {
+
+    .CheckboxGroup-item:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .Checkbox:last-child,
+  .ToggleCheckbox:last-child {
+    margin-bottom: 0;
+  }
+}

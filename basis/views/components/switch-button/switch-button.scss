@@ -1,0 +1,97 @@
+
+/*------------------------------------*\
+    SwitchButton component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$toggle-btn-border-color: $color-silver;
+$toggle-btn-bg-color: $color-alabaster;
+
+$toggle-btn-checked-bg-color: #b2ffd3;
+$toggle-btn-checked-border-color: $color-algae-green;
+
+.SwitchButton {
+  display: inline-block;
+}
+
+.SwitchButton-toggle {
+  display: inline-block;
+  width: 37px;
+  height: 15px;
+  overflow: visible;
+  background: $toggle-btn-bg-color;
+  border: 1px solid $toggle-btn-border-color;
+  border-radius: 15px;
+  user-select: none;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color .3s;
+
+  &.disabled {
+    background: $toggle-btn-bg-color;
+    border-color: $toggle-btn-border-color;
+  }
+
+
+  &--checked {
+
+    .SwitchButton-toggleButton {
+      transform: translate(19px, -3px);
+      transition: transform .2s ease-in;
+    }
+  }
+}
+
+.SwitchButton-toggleButton {
+  position: relative;
+  height: 18px;
+  width: 18px;
+
+  background: $color-white;
+  border: 1px solid $color-mercury;
+  border-radius: 50%;
+  box-shadow: 0 1px 0 $color-mercury;
+
+  transform: translate(-1px, -3px);
+  transition: transform .2s ease-in;
+
+  &:before {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    content: '';
+    background-color: $color-aero-blue;
+    border: 1px solid $color-jungle-green;
+    border-radius: 50%;
+  }
+}
+
+.SwitchButton-leftText {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+  color: $color-dove-gray;
+
+  &--inactive {
+    color: $color-silver;
+  }
+}
+
+.SwitchButton-rightText {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: top;
+  color: $color-dove-gray;
+
+  &--inactive {
+    color: $color-silver;
+  }
+
+}

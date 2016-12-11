@@ -1,0 +1,138 @@
+/*------------------------------------*\
+    Checkbox component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$checkbox-bg-color: $color-white;
+$checkbox-border-color: $color-silver;
+
+$checkbox-disabled-bg-color: $color-mercury;
+$checkbox-disabled-border-color: $color-silver;
+
+$checkbox-font-size: 17px;
+$checkbox-margin: 15px;
+$checkbox-color: $color-dove-gray;
+
+$required-color: $color-carnation;
+
+.Checkbox {
+  position: relative;
+
+  display: inline-block;
+  height: $checkbox-font-size;
+  padding-left: $checkbox-font-size + $checkbox-margin;
+
+  font-size: 12px;
+  color: $checkbox-color;
+
+  cursor: pointer;
+
+  &.disabled {
+    .Checkbox-simulator {
+      border-color: $color-silver;
+      background: $checkbox-disabled-bg-color;
+    }
+  }
+}
+
+.Checkbox-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: inline-block;
+  margin-right: 10px;
+
+  opacity: 0;
+}
+
+.Checkbox-text {
+  display: inline;
+
+  line-height: $checkbox-font-size + 1;
+}
+
+.Checkbox-simulator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+
+  height: $checkbox-font-size;
+  width: $checkbox-font-size;
+
+  background: $checkbox-bg-color;
+  border: 1px solid transparent;
+  border-color: $checkbox-border-color;
+  border-radius: 5px;
+
+  user-select: none;
+}
+
+input:checked ~ .Checkbox-simulator {
+  background: $color-algae-green;
+  border-color: $color-jungle-green;
+
+  &:before {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+
+    width: 9px;
+    height: 5px;
+
+    border-bottom: 2px solid $color-white;
+    border-left: 2px solid $color-white;
+
+    content: '';
+
+    transform: rotate(-45deg);
+  }
+}
+
+.Checkbox--partial .Checkbox-simulator {
+  background: $color-white;
+  border-color: $color-jungle-green;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    margin: auto;
+
+    width: 11px;
+    height: 11px;
+
+    background: $color-algae-green;
+    border: 1px solid transparent;
+    content: '';
+
+    border-radius: 3px;
+  }
+}
+
+input:disabled ~ .Checkbox-simulator {
+  background: $checkbox-disabled-bg-color;
+  border-color: $checkbox-disabled-border-color;
+}
+
+.Checkbox--partialDisabled .Checkbox-simulator:before {
+  background: $checkbox-disabled-bg-color;
+  border-color: $checkbox-disabled-border-color;
+}
+
+.Checkbox-required {
+  padding-left: 5px;
+  color: $required-color;
+
+  user-select: none;
+}

@@ -1,0 +1,56 @@
+// ------------------------------------ //
+//  UI mixins
+// ------------------------------------ //
+
+//
+//  Input placeholder text color/size
+//
+@mixin input-placeholder($color, $size:"", $weight:"normal") {
+    // do NOT group selectors!
+
+    // WebKit, Blink, Edge
+    &::-webkit-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+        @if $weight != "" {
+            font-weight: $weight;
+        }
+    }
+
+    // Mozilla Firefox 4 to 18
+    &:-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        @if $size != "" {
+            font-size: $size;
+        }
+        @if $weight != "" {
+            font-weight: $weight;
+        }
+    }
+
+    // Mozilla Firefox 19+
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        @if $size != "" {
+            font-size: $size;
+        }
+        @if $weight != "" {
+            font-weight: $weight;
+        }
+    }
+
+    // Internet Explorer 10-11
+    &:-ms-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+        @if $weight != "" {
+            font-weight: $weight;
+        }
+    }
+}

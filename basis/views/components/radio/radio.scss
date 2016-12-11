@@ -1,0 +1,98 @@
+/*------------------------------------*\
+    Radio component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$radio-bg-color: $color-white;
+$radio-border-color: $color-silver;
+$required-color: $color-carnation;
+$radio-height: 17px;
+
+$radio-disabled-bg-color: $color-mercury;
+$radio-disabled-border-color: $color-silver;
+$radio-color: $color-dove-gray;
+
+
+.Radio {
+  position: relative;
+
+  display: inline-block;
+  height: $radio-height;
+
+  font-size: 12px;
+  color: $radio-color;
+
+  cursor: pointer;
+}
+
+.Radio-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: inline-block;
+
+  opacity: 0;
+}
+
+.Radio-text {
+  display: inline-block;
+
+  vertical-align: middle;
+}
+
+.Radio-simulator {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+
+  height: $radio-height;
+  width: $radio-height;
+
+  vertical-align: middle;
+
+  background: $radio-bg-color;
+  border: 1px solid $radio-border-color;
+  border-radius: $radio-height/2;
+
+  user-select: none;
+}
+
+input:checked ~ .Radio-simulator {
+  background: $color-algae-green;
+  border-color: $color-jungle-green;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+
+    width: 5px;
+    height: 5px;
+
+    background: $color-white;
+    border-bottom: 2px solid $color-white;
+    border-left: 2px solid $color-white;
+
+    content: '';
+
+    border-radius: 2.5px;
+  }
+}
+
+input:disabled ~ .Radio-simulator {
+  background: $radio-disabled-bg-color;
+  border-color: $radio-disabled-border-color;
+}
+
+.Radio-required {
+  padding-left: 5px;
+  color: $required-color;
+
+  user-select: none;
+}

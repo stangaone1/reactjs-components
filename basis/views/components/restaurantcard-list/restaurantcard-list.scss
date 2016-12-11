@@ -1,0 +1,23 @@
+// ------------------------------------ //
+// 	RestaurantCard component
+// ------------------------------------ //
+
+$restaurantcard-spacing: 15px;
+
+.RestaurantCardList {
+  // add items spacing
+  &-Items {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    margin: 0 (-$restaurantcard-spacing);
+
+    .RestaurantCard {
+      padding: 60px 40px 30px;
+      margin: $restaurantcard-spacing;
+
+      .SectionCardHeader-icon { display: none; }
+      .SectionCardHeader-title { margin-bottom: 20px; }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    TabList component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+.TabList-Navigation {
+  position: relative;
+  max-height: 50px;
+}
+
+.TabArea .TabList-Navigation .TabList-aside {
+  position: absolute;
+  top: -10px;
+  right: 0;
+}
+
+.TabList-Menu {
+  display: block;
+  width: 100%;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Tab-Item {
+  display: inline-block;
+  vertical-align: bottom;
+
+  margin-right: 5px;
+
+  a {
+    display: block;
+
+    height: 50px;
+    padding: 0 40px;
+
+    border: 1px solid #ddd;
+    border-bottom: none;
+
+    line-height: 50px;
+    font-weight: 400;
+    text-decoration: none;
+
+    color: #666666;
+    background-color: $color-white;
+
+    transform: translateY(4px);
+    transition: transform 100ms ease-in-out;
+
+    &:hover {
+        transform: translateY(0);
+    }
+  }
+
+  &--selected {
+
+    a {
+      transform: translateY(0);
+      border-color: #ddd;
+      font-weight: 700;
+
+      background-color: #f8f8f8;
+      color: #333;
+    }
+  }
+
+  &--disabled {
+
+    a {
+      cursor: default;
+
+      &:hover {
+        transform: translateY(4px);
+      }
+    }
+  }
+}

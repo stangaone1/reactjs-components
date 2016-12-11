@@ -1,0 +1,18 @@
+@import '~assets/styles/settings/colors';
+
+.TutorialModal {
+  .Modal-footer {
+    .Button {
+      float: right;
+    }
+
+    .Checkbox {
+      float: left;
+    }
+  }
+
+  .TutorialModal-content-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

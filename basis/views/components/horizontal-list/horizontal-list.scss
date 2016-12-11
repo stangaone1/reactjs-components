@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    HorizontalList component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+.HorizontalList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  white-space: nowrap;
+
+  > li {
+    display: table-cell;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+  }
+}
+
+.HorizontalListContainer {
+  &--selfScrolled {
+    max-width: 100%;
+    overflow: auto;
+  }
+}

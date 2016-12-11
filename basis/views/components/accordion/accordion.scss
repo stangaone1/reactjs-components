@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    Accordion component
+\*------------------------------------*/
+
+$accordion-body-border: #dedede;
+
+.Accordion {
+  position: relative;
+
+  border: 1px solid $accordion-body-border;
+}
+
+.Dropdown-body .Accordion {
+  border: 0;
+}

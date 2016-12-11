@@ -1,0 +1,57 @@
+@import '~assets/styles/settings/variables';
+
+.EditMainMenu {
+  overflow: hidden;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .InputField {
+    margin: 30px;
+    width: auto;
+    flex: 0 0 auto;
+
+    &-Label{
+      line-height: 20px;
+    }
+  }
+
+  &-positionLabel {
+    display: block;
+    margin: 0 30px 15px 30px;
+    flex: 0 0 auto;
+  }
+
+  &-container {
+    position: relative;
+    background-color: $color-gallery;
+    overflow: auto;;
+    padding: 30px;
+    flex: 1 1 auto;
+  }
+
+  .EditMainMenu-item {
+    padding: 10px 15px;
+
+    &--new {
+      background-color: $color-aero-blue;
+      border: 1px solid $color-algae-green;
+    }
+
+    &Title {
+      color: $color-dove-gray;
+      font-family: $font-main;
+      font-size: 12px;
+      font-weight: $fw-bold;
+    }
+
+    &More {
+      float: right;
+      color: $color-silver;
+      font-family: $font-main;
+      font-size: 12px;
+      font-weight: $fw-normal;
+    }
+  }
+}

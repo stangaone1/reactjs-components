@@ -1,0 +1,108 @@
+/*------------------------------------*\
+    ACCORDION DROPDOWN
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$accordion-dropdown-body-background: $color-alabaster;
+$accordion-dropdown-dowp-shadow-color: rgba(0, 0, 0, .07);
+$accordion-dropdown-body-border: #dedede;
+$accordion-dropdown-header-background: $color-tundora;
+$accordion-dropdown-border-color: #ebebeb;
+$accordion-dropdown-arrow-border-color: $color-silver;
+$accordion-dropdown-section-header-background-color: $color-white;
+
+.AccordionDropdown {
+  width: 310px;
+
+  .AccordionSection {
+    overflow:hidden;
+    &.AccordionSection--open:last-child {
+      .AccordionSectionHeader {
+        border-radius: 0;
+      }
+    }
+
+    &:last-child,
+    &:first-child {
+      background-color: transparent;
+    }
+
+    &:first-child .AccordionSectionHeader {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:last-child .AccordionSectionHeader {
+      border-bottom: 0;
+      border-radius: 0 0 4px 4px;
+    }
+
+    &:last-child .AccordionSectionBody {
+      border-radius: 0 0 4px 4px;
+    }
+
+    &:last-child .AccordionSectionBody-content {
+      border-top: 1px solid $accordion-dropdown-border-color;
+      border-bottom: 0;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  .AccordionSectionHeader {
+    background-color: $accordion-dropdown-section-header-background-color;
+
+    &-title {
+      &::before,
+      &::after {
+        transition: all .3s;
+      }
+
+      &::before {
+        opacity: 0;
+
+        border-top: 2px solid $accordion-dropdown-section-header-background-color;
+        border-left: 2px solid $accordion-dropdown-section-header-background-color;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .AccordionSectionBody {
+    height: 0;
+    max-height: 220px;
+
+    background-color: $accordion-dropdown-body-background;
+
+    transition: height .3s;
+  }
+
+  .AccordionSection--open {
+    .AccordionSectionBody {
+      height: auto;
+      max-height: 220px;
+      overflow: scroll-y;
+    }
+
+    .AccordionSectionHeader {
+      background-color: $accordion-dropdown-header-background;
+
+      color: $accordion-dropdown-section-header-background-color;
+
+      &-title {
+        &::before {
+          opacity: 1;
+        }
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.AccordionDropdown--hidden {
+  display: none;
+}

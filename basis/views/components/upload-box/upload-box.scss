@@ -1,0 +1,308 @@
+/*------------------------------------*\
+    UploadBox component
+\*------------------------------------*/
+@import "~assets/styles/settings/colors";
+@import '~assets/styles/settings/variables.scss';
+
+$background: (
+  default: $color-mercury,
+  innerBox: $color-gallery,
+  dragOver: $color-aero-blue,
+  fileInfo: $color-white,
+  error: $color-chablis,
+);
+
+$border: (
+  default: $color-silver,
+  error: $color-carnation,
+);
+
+$upload-label-color: $color-dove-gray;
+$upload-label-size: 12px;
+$upload-inner-color: $color-gray;
+$upload-inner-font-size: $fs-s;
+$upload-control-button-hover: $color-jungle-green;
+$upload-file-color: $color-mariner;
+$upload-file-info-close-color: $color-carnation;
+$upload-disclaimer-color: $color-carnation;
+
+.UploadBox {
+  position: relative;
+
+  min-width: 220px;
+  margin-bottom: 10px;
+
+  &--fileImage {
+    min-height: 200px;
+
+    .UploadBox-content:before {
+      content: '';
+      vertical-align: middle;
+      display: inline-block;
+      height: 100%;
+      margin-left: -0.25em;
+    }
+    .UploadBox-fileInfoCloseIcon{
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  &-imageWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    min-width: 500px;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &-image {
+    position: relative;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 200px;
+    min-height: 200px;
+  }
+
+  &--dragover {
+    .UploadBox-content {
+      background: lighten(map-get($background, dragOver), 5) !important;
+      border-color: darken(map-get($background, dragOver), 50) !important;
+    }
+  }
+
+  &--file {
+    .UploadBox-dropzone {
+      padding: 0;
+    }
+
+    .UploadBox-content {
+      padding: 0;
+      border: none;
+      background: none transparent;
+    }
+
+    .UploadBox-contentDescription {
+      display: none;
+    }
+  }
+
+  &--error {
+    .UploadBox-dropzone {
+      padding: 0;
+
+      overflow: visible;
+    }
+
+    .UploadBox-content {
+      padding: 0 0 30px 0;
+      border: none;
+      background: none transparent;
+    }
+
+    .UploadBox-contentDescription {
+      display: none;
+    }
+
+    .UploadBox-fileInfo {
+      top: -1px;
+      left: -1px;
+
+      width: calc(100% + 2px);
+      padding: 15px;
+
+      background: map-get($background, error);
+      border: 1px solid map-get($border, error);
+      border-radius: 5px 5px 0 0;
+
+      z-index: 2;
+    }
+  }
+}
+
+.UploadBox-label {
+  margin: 15px 0;
+
+  color: $upload-label-color;
+  font-size: $upload-label-size;
+  line-height: 1;
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.UploadBox-dropzone {
+  position: relative;
+  height: 100%;
+
+  padding: 15px;
+
+  background: map-get($background, default);
+  border: 1px solid transparent;
+  border-color: map-get($border, default);
+  border-radius: 5px;
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.UploadBox-content {
+  padding: 30px;
+  height: 100%;
+  background: map-get($background, innerBox);
+  border: 2px dashed transparent;
+  border-color: lighten(map-get($border, default), 5);
+  border-radius: 5px;
+
+  text-align: center;
+
+}
+
+.UploadBox-contentControls {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.UploadBox-contentDescription {
+  margin-bottom: 12px;
+
+  color: $upload-inner-color;
+  font-size: $upload-inner-font-size;
+  line-height: 1;
+
+  text-align: center;
+}
+
+.UploadBox-button {
+  &:hover {
+    background: map-get($background, fileInfo);
+    border-color: $upload-control-button-hover;
+
+    color: $upload-control-button-hover;
+  }
+}
+
+.UploadBox-Disclaimer {
+  margin: 0;
+  padding: 30px 15px 0;
+
+  color: $upload-disclaimer-color;
+  font-size: $fs-xs;
+  line-height: $fs-xs + 4px;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.UploadBox-controls {
+  margin: 30px auto;
+}
+
+.UploadBox-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  display: none;
+
+  width: 1px;
+  height: 1px;
+}
+
+.UploadBox-fileInfo {
+  position: relative;
+
+  width: 100%;
+  padding: 23px 15px;
+
+  background: map-get($background, fileInfo);
+  border-bottom: 1px solid map-get($border, default);
+
+  font-family: $font-main;
+  font-size: $upload-inner-font-size;
+  line-height: $upload-inner-font-size + 2px;
+  text-align: left;
+}
+
+.UploadBox-fileInfoIcon {
+  display: inline-block;
+
+  width: 21px;
+  height: 22px;
+
+  fill: $upload-inner-color;
+}
+
+.UploadBox-fileInfoName {
+  display: inline-block;
+
+  width: calc(70% - 60px);
+  margin: 5px 0 0 15px;
+  padding: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: $upload-file-color;
+
+  vertical-align: top;
+}
+
+.UploadBox-fileInfoError {
+  width: calc(100% - 25px);
+  margin: 0;
+
+  color: $upload-file-info-close-color;
+}
+
+.UploadBox-fileInfoSize {
+  display: inline-block;
+
+  width: calc(30% - 15px);
+  margin: 5px 15px 0 15px;
+
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  vertical-align: top;
+}
+
+.UploadBox-fileInfoCloseIcon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  &:hover {
+    > svg {
+      fill: lighten($upload-file-info-close-color, 10);
+    }
+  }
+
+  > svg {
+    width: 9px;
+    height: 9px;
+
+    fill: $upload-file-info-close-color;
+  }
+}

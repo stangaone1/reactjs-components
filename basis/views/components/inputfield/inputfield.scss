@@ -1,0 +1,263 @@
+/*------------------------------------*\
+    InputField component
+\*------------------------------------*/
+@import "~assets/styles/settings/colors";
+@import '~assets/styles/settings/variables.scss';
+@import '~assets/styles/tools/mixins.scss';
+
+$search-icon-fill: $color-dove-gray;
+
+$background: (
+  default: $color-white,
+  disabled: $color-mercury,
+);
+
+$border: (
+  default: $color-silver,
+  focus: $color-malibu,
+  error: $color-carnation,
+  success: $color-jungle-green,
+);
+
+$input: (
+  color: $color-tundora,
+  disabledColor: $color-gray,
+  error: $color-carnation,
+  size: 13px,
+  placeholderColor: $color-gray,
+);
+
+$label: (
+  color: $color-dove-gray,
+  size: 12px,
+);
+
+.InputField {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 20px;
+
+  &--search{
+    display: inline-block;
+    width: 360px;
+    margin-bottom: 0;
+    margin-left: 20px;
+
+    input {
+      border-radius: 90px;
+    }
+  }
+
+  &--multiline {
+    .InputField-Input {
+      min-height: 90px;
+      padding: 7px 15px;
+
+      line-height: 20px;
+    }
+
+    .InputField-IconButton {
+      top: 10px;
+      transform: none;
+    }
+  }
+
+  &--multiline-resizeable {
+    .InputField-Input {
+      resize: vertical;
+    }
+  }
+
+  &--icon {
+    .InputField-Input {
+      padding-right: 30px;
+    }
+  }
+
+  &--iconLeft {
+    .InputField-Input {
+      padding-left: 30px;
+    }
+  }
+
+  &--required {
+    .InputField-InputHolder {
+      &:after {
+        content: "";
+
+        position: absolute;
+        right: -15px;
+        top: 0;
+        z-index: 2;
+
+        width: 5px;
+        height: 5px;
+
+        border-radius: 50%;
+        background: map-get($border, focus);
+      }
+    }
+  }
+
+  &--error {
+    margin-bottom: 15px;
+
+    .InputField-InputHolder {
+      &:after {
+        background: map-get($border, error);
+      }
+    }
+
+    .InputField-Input {
+      border-color: map-get($border, error);
+    }
+
+    .InputField-IconButton {
+      display: none;
+      &--remove {
+        display: block;
+      }
+    }
+  }
+
+  &--success {
+    .InputField-Input {
+      border-color: map-get($border, success);
+    }
+
+    .InputField-IconButton {
+      display: none;
+    }
+  }
+
+  &.disabled {
+    .InputField-Input {
+      background: map-get($background, disabled);
+    }
+  }
+}
+
+.InputField-InputHolder {
+  position: relative;
+}
+
+.InputField-Input {
+  width: 100%;
+  height: 35px;
+  padding: 0 15px;
+
+  background-color: map-get($background, default);
+  border: 1px solid;
+  border-color: map-get($border, default);
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+
+  color: map-get($input, color);
+  font-family: $font-main;
+  font-size: map-get($input, size);
+  font-weight: 400;
+  vertical-align: middle;
+
+  &:focus {
+    border-color: map-get($border, focus);
+    animation: focus-pulse 1s 1;
+  }
+
+  @include input-placeholder(map-get($input, placeholderColor), map-get($label, size), 400);
+}
+
+.InputField-Label {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: map-get($label, color);
+  font-family: $font-main;
+  font-size: map-get($label, size);
+  line-height: map-get($label, size) - 2px;
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.InputField-IconButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+
+  width: 12px;
+  height: 12px;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+
+  cursor: default;
+
+  &--remove {
+    right: -15px;
+  }
+
+  &--clickable {
+    cursor: pointer;
+  }
+
+  &--left {
+    right: inherit;
+    left: 10px;
+  }
+
+  .Icon {
+    width: 12px;
+    height: 12px;
+    fill: inherit;
+
+    overflow: hidden;
+
+    vertical-align: top;
+
+    &--search {
+      width: 15px;
+      height: 15px;
+      top: -2px;
+      position: relative;
+      vertical-align: inherit;
+      fill: $search-icon-fill;
+    }
+  }
+}
+
+.InputField-Error {
+  margin: 0;
+  padding: 5px 15px 0;
+
+  color: map-get($input, error);
+  font-family: $font-main;
+  font-size: map-get($label, size);
+  font-weight: normal;
+  line-height: map-get($label, size) + 8px;
+
+  &:empty {
+    padding: 0;
+  }
+}
+
+@keyframes focus-pulse {
+  0% {
+    box-shadow: 0 0 2px 1px rgba(map-get($border, focus), 0);
+  }
+  50% {
+    box-shadow: 0 0 2px 1px rgba(map-get($border, focus), 0.3);
+  }
+  100% {
+    box-shadow: 0 0 2px 1px rgba(map-get($border, focus), 0);
+  }
+}

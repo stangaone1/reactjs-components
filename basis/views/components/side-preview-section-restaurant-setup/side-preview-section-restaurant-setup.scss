@@ -1,0 +1,40 @@
+@import "~assets/styles/settings/colors";
+
+.SidePreviewSectionRestaurantSetup {
+  &-SetupPercentage {
+    color: $color-mine-shaft;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &-SetupMissingWarning {
+    color: $color-carnation;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &-SetupMissingList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: $color-dove-gray;
+    font-size: 12px;
+    font-weight: 400;
+
+    li {
+      margin-top: 15px;
+
+      &:before {
+        content: " ";
+        position: relative;
+        width: 6px;
+        height: 2px;
+        display: inline-block;
+        top: -3px;
+        background: $color-vivid-tangerine;
+        margin-right: 12px;
+      }
+    }
+  }
+}

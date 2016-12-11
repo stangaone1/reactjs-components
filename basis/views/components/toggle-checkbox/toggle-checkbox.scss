@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    ToggleCheckbox component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$toggle-text-color: $color-dove-gray;
+
+.ToggleCheckbox {
+  position: relative;
+
+  min-width: 188px;
+  margin-bottom: 15px;
+}
+
+.ToggleCheckbox-checkbox {
+  width: calc(100% - 57px);
+
+  margin-right: 57px;
+
+  .Checkbox-text {
+    width: calc(100% - 27px);
+
+    overflow: hidden;
+
+    color: $toggle-text-color;
+    font-size: 12px;
+    font-weight: 400;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    user-select: none;
+  }
+}
+
+.ToggleCheckbox-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  transform: translateY(-50%);
+
+  &.disabled {
+    background: $color-white;
+
+    cursor: default;
+  }
+}

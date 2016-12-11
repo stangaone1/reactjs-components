@@ -1,0 +1,34 @@
+.ChooseSection-cardContainer {
+  float: left;
+  width: 50%;
+  margin-bottom: 30px;
+
+  &:nth-child(2n) {
+    padding-left: 15px;
+  }
+
+  &:nth-child(2n+1) {
+    clear: left;
+    padding-right: 15px;
+  }
+}
+
+.ChooseSection-link {
+  float: left;
+  width: 50%;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  font-size: 13px;
+  text-align: left;
+
+  &:nth-child(2n) {
+    padding-left: 10px;
+  }
+
+  &:nth-child(2n+1) {
+    clear: left;
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,60 @@
+@import '~assets/styles/settings/colors';
+
+.SetupCompletionTooltip {
+  .DropdownFooter {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .ScrollArea-content {
+    max-height: 240px;
+    padding: 20px 40px;
+  }
+}
+
+.SetupCompletionTooltip-requiredHeading {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: $color-carnation;
+}
+
+.SetupCompletionTooltip-recommendedHeading {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: $color-gray;
+}
+
+.SetupCompletionTooltip-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+.SetupCompletionTooltip-list--required {
+  margin-bottom: 10px;
+
+  .SetupCompletionTooltip-listItem::before {
+    background-color: $color-carnation;
+  }
+}
+
+.SetupCompletionTooltip-list--recommended .SetupCompletionTooltip-listItem::before {
+  background-color: $color-lightning-yellow;
+}
+
+.SetupCompletionTooltip-listItem {
+  position: relative;
+  padding-left: 30px;
+  line-height: 28px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 9px;
+    height: 2px;
+    margin-top: -1px;
+  }
+}

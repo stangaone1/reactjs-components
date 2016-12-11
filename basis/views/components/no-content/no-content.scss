@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    NoContent component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/variables';
+
+$no-content-color: $color-gray;
+
+.NoContent {
+  position: relative;
+  top: 50%;
+
+  color: $no-content-color;
+  text-align: center;
+
+  transform: translateY(-50%);
+}
+
+.NoContent-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.NoContent-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 48px;
+}

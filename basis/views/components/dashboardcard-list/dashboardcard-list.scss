@@ -1,0 +1,32 @@
+// ------------------------------------ //
+// 	DashboardCardList component
+// ------------------------------------ //
+
+@import "~assets/styles/settings/colors";
+
+$dashboardcard-spacing: 15px;
+
+.DashboardCardList {
+  // add items spacing
+  &-Items {
+    margin: 0 (-$dashboardcard-spacing);
+
+    .DashboardCard {
+      margin: $dashboardcard-spacing;
+    }
+  }
+}
+
+.DashboardCardList-Remaining {
+  padding-top: 30px;
+  margin-top: 15px;
+
+  border-top: 1px solid $color-silver;
+
+  span {
+    margin-left: 18px;
+
+    color: $color-gray;
+    font-size: 12px;
+  }
+}

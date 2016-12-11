@@ -1,0 +1,105 @@
+@import "~assets/styles/settings/colors";
+
+$publishboard-preview-background: $color-mine-shaft;
+$publishboard-sidebar-width: 400px;
+$publishboard-sidebar-background: $color-gallery;
+$publishboard-border-radius: 5px;
+
+.PublishBoard-Content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: $publishboard-border-radius;
+  overflow: hidden;
+
+  animation-duration: 350ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+
+  &:not(.PublishBoard-ContentProxy) {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// proxy container used to cache data
+.PublishBoard-ContentProxy{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+
+  display: none;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+.PublishBoard-Preview {
+  position: relative;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  background: $publishboard-preview-background;
+
+  overflow: hidden;
+}
+
+.PublishBoard-Sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: $publishboard-sidebar-width;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .PublishBoard-SidebarActions {
+    padding-bottom: 95px;
+  }
+}
+
+.PublishBoard-SidebarFront {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+
+  background: $publishboard-sidebar-background;
+  transform: rotateY(0deg);
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 350ms ease-out;
+}
+
+
+.PublishBoard-SidebarBack {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  background: $publishboard-sidebar-background;
+  transform: rotateY(-180deg);
+
+  margin: auto;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 350ms ease-out;
+}

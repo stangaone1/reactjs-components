@@ -1,0 +1,16 @@
+@import "~assets/styles/settings/variables";
+
+.PanelContentDays {
+  padding-top: 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $color-mercury;
+  border-radius: 0 !important;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.PanelContentMultipleDays {
+  padding-top: 0;
+  padding-bottom: 30px;
+}

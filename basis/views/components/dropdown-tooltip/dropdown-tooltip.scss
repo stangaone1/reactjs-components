@@ -1,0 +1,38 @@
+@import '~assets/styles/settings/colors';
+
+
+.DropdownTooltip,
+.DropdownTooltip:hover {
+  background: transparent;
+
+  border: 0;
+  border-bottom: 1px dashed $color-dove-gray;
+  border-radius: 0;
+
+  .Dropdown-button {
+    height: auto;
+    padding: 0 0 5px;
+
+    background: none;
+    border: 0;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    color: inherit;
+
+    text-transform: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .Dropdown-body {
+    overflow: auto;
+    top: 25px;
+    right: 50%;
+    box-shadow: 2.5px 4.3px 5px rgba(1, 1, 1, .1);
+    transform: translateX(50%);
+  }
+}

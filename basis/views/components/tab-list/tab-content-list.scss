@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    TabContentList component
+\*------------------------------------*/
+
+.TabContent-List {
+  position: relative;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.TabContent-item {
+  display: none;
+
+  &--selected {
+    display: block;
+  }
+}

@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    ChoosePhoto component
+\*------------------------------------*/
+@import '~assets/styles/settings/variables';
+
+$choose-photo-bg: $color-gallery;
+$choose-photo-tab-font-weight: $fw-normal;
+
+.ChoosePhoto-modal {
+  width: 1200px;
+
+  .Modal-body {
+    overflow-y: inherit;
+  }
+}
+
+.ChoosePhoto-tabArea {
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+
+  .TabContent-Item {
+    height: 100%;
+  }
+
+  .Tab-Item a {
+    padding-bottom: 30px;
+
+    font-weight: $choose-photo-tab-font-weight;
+    text-transform: none;
+  }
+
+  .TabList {
+    margin: 0;
+    border: 0;
+  }
+
+  .TabList-Navigation {
+    padding: 0 30px;
+  }
+
+  .TabContent-List {
+    height: 455px;
+    background: $choose-photo-bg;
+
+  }
+}
+
+.ChoosePhoto-modal {
+  .Modal-body {
+    padding-bottom: 0;
+    max-height: 100%;
+  }
+  .Modal-footer {
+    text-align: right;
+  }
+}
+
+.ChoosePhoto-content {
+  height: 500px;
+}
+
+.ChoosePhoto--header {
+  > .Button {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+
+    padding-right: 15px;
+    padding-left: 15px;
+
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,245 @@
+/*------------------------------------*\
+    Table component
+\*------------------------------------*/
+@import "~assets/styles/settings/colors";
+
+$table-background-color: $color-white;
+$table-text-color: $color-dove-gray;
+$table-link-color: $color-mariner;
+$table-header-text-color: $color-gray;
+$table-header-active-text-color: $color-dove-gray;
+$table-header-bg-color: $color-alabaster;
+$table-border: 1px solid $color-silver;
+$table-highlight-color: $color-alabaster;
+$table-arrow-color: $color-gray;
+$table-active-arrow-color: $color-dove-gray;
+$table-row-select-color: $color-aero-blue;
+$table-row-select-border-color: 1px solid $color-jungle-green;
+$table-dropshadow: rgba(0, 0, 0, 0.156863) -1px 0px 1px 0px;
+$table-iconsort-width: 26px;
+$table-iconsort-height: 26px;
+
+.Table {
+  display: inline-block;
+  background-color: $table-background-color;
+
+  border-right: $table-border;
+  border-bottom: $table-border;
+  border-left: $table-border;
+  border-collapse: collapse;
+
+  .TableCell:not(.TableCell--head) {
+    :first-child {
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .DropdownTooltip {
+      white-space: normal;
+    }
+
+    .Dropdown-button {
+      height: 25px;
+    }
+
+    .Dropdown-body {
+      top: 40px;
+    }
+  }
+
+  &--scrolled {
+
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    overflow-x: scroll;
+
+    .Table {
+
+      border-right: 0;
+      border-bottom: 0;
+
+      .TableRow:last-child {
+        border-bottom: $table-border;
+      }
+
+      .TableCell {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--fixedLeft {
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    .TableRow {
+
+      .TableCell {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+
+      .TableCell:first-of-type {
+        border-left: 3px solid transparent;
+      }
+
+      &--active {
+
+        .TableCell:first-of-type {
+          border-color: $color-jungle-green;
+        }
+      }
+    }
+  }
+
+  &--fixedRight {
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+
+    box-shadow: $table-dropshadow;
+  }
+
+  .TableCell:last-child {
+    padding-right: 35px;
+  }
+}
+
+.TableCell {
+
+  display: table-cell;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  font-size: 12px;
+  color: $table-text-color;
+  vertical-align: middle;
+
+  &--head {
+
+    background-color: $table-header-bg-color;
+    font-size: 11px;
+    color: $table-header-text-color;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &--active {
+    color: $table-header-active-text-color;
+    font-weight: bold;
+  }
+
+  a {
+    color: $table-link-color;
+  }
+
+}
+
+.TableRow {
+
+  display: table-row;
+  height: 50px;
+
+  &--selected {
+    background-color: $table-row-select-color;
+    border-top: $table-row-select-border-color;
+    border-bottom: $table-row-select-border-color;
+  }
+
+  .TableCell:first-child {
+    padding-left: 30px;
+  }
+}
+
+.Table--borderedTop {
+
+  .TableRow:not(.TableRow--selected) {
+    border-top: $table-border;
+  }
+}
+
+.Table--striped {
+
+  .TableRow:nth-of-type(odd) {
+    background-color: $table-highlight-color;
+  }
+}
+
+.Table-container {
+
+  position: relative;
+  width: 100%;
+}
+
+.Table-headBlock {
+  position: relative;
+  float: left;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  > span {
+    white-space: pre;
+  }
+}
+
+.Table-headBlock-input {
+
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.Table-headSorter {
+
+  display: inline-block;
+  margin-left: 5px;
+
+  > .Icon {
+
+    position: absolute;
+    top: 50%;
+
+    margin-right: 3px;
+
+    cursor: pointer;
+    transition: transform 100ms ease-out;
+    fill: $table-arrow-color;
+
+    &--table {
+
+      width: $table-iconsort-width / 2;
+      height: $table-iconsort-height / 2;
+    }
+
+    &--up {
+
+      margin-top: -3px;
+      transform: rotate(90deg);
+    }
+
+    &--down {
+      margin-top: -9px;
+      transform: rotate(-90deg);
+    }
+
+    &--enabled {
+      margin-top: -6px;
+      visibility: visible;
+      fill: $table-active-arrow-color;
+
+    }
+
+    &--disabled {
+      visibility: hidden;
+    }
+  }
+}

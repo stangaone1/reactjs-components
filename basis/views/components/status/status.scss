@@ -1,0 +1,46 @@
+@import '~assets/styles/settings/colors';
+
+.Status {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+
+  border-radius: 3px;
+
+  font-size: 13px;
+
+  color: $color-gray;
+
+  text-align: left;
+  text-decoration: none;
+
+}
+
+.Status-title {
+  margin-left: 15px;
+}
+
+.Status--incomplete:before,
+.Status--complete:before {
+  content: '';
+
+  position: absolute;
+  top: 11px;
+  left: 10px;
+
+  display: block;
+
+  width: 12px;
+  height: 12px;
+
+  background: $color-carnation;
+  border: 1px solid $color-carnation;
+  border-radius: 5px;
+}
+
+.Status--complete {
+  &:before {
+    background-color: $color-jungle-green;
+    border-color: $color-jungle-green;
+  }
+}

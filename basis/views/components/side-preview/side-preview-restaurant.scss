@@ -1,0 +1,27 @@
+@import "~assets/styles/settings/colors";
+
+.SidePreviewRestaurant {
+  &-Title {
+    color: $color-tundora;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &-Subtitle {
+    color: $color-gray;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 5px;
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: block;
+  }
+
+  &-Content{
+    margin-top: 20px;
+  }
+
+}

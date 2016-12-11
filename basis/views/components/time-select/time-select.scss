@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #TIME_SELECT
+\*------------------------------------*/
+@import "~assets/styles/settings/variables";
+
+
+.TimeSelect {
+  display: inline-block;
+
+  .Select-InputLabel {
+    color: $color-gray;
+  }
+}
+
+.TimeSelect-hours {
+  display: inline-block;
+}
+
+.TimeSelect-minutes {
+  display: inline-block;
+  margin-left: 5px;
+}

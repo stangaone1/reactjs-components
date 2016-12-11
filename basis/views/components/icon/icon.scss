@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    Icon component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$iconGreen: $color-jungle-green;
+$iconGray: $color-gray;
+
+.Icon {
+  width: 20px;
+  height: 20px;
+}
+
+.Icon--arrow {
+  width: 50px;
+  height: 50px;
+}
+
+.Icon--card {
+  height: 48px;
+}
+
+.Icon--logo {
+  width: 100px;
+  height: 56px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Icon--completed-big {
+  fill: $iconGreen;
+}
+
+.Icon--uncompleted-big {
+  height: 4px;
+  margin-top: 7px;
+}
+
+.Icon--preload {
+  fill: $iconGreen;
+}
+
+.Icon--photo,
+.Icon--video {
+    width: 96px;
+    height: 92px;
+    fill: #939393;
+}

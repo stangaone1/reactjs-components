@@ -1,0 +1,97 @@
+@import '~assets/styles/settings/variables';
+
+$border: 1px solid $color-silver;
+$simple-restaurant-selection-height: 690px;
+$simple-restaurant-selection-header-height: 75px;
+$simple-restaurant-selection-content-height: $simple-restaurant-selection-height - $simple-restaurant-selection-header-height - 2px;
+$simple-restaurant-selection--selected: $color-azure-radiance;
+
+.SimpleRestaurantSelection {
+  position: relative;
+  width: 100%;
+  height: $simple-restaurant-selection-height;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+
+  .PanelContent {
+    position: relative;
+    padding: 0;
+  }
+
+  .CheckboxSection-text {
+    line-height: 1;
+  }
+
+  .Icon--chevron {
+    fill: $color-silver;
+
+    &:hover {
+      fill: $color-mine-shaft;
+    }
+  }
+
+  &-selectAll {
+    color: $color-dove-gray;
+  }
+
+  &-counter {
+    margin-left: 10px;
+    color: $color-silver;
+  }
+
+  &-restaurant {
+    position: relative;
+    margin: 15px 30px;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-top: 30px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    &-details {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 20px;
+    }
+
+    &--highlighted {
+      border-color: $simple-restaurant-selection--selected;
+      color: $simple-restaurant-selection--selected;
+
+      .Checkbox-text {
+        color: $simple-restaurant-selection--selected;
+      }
+    }
+  }
+
+  &-list {
+    display: inline-block;
+    width: 350px;
+    height: $simple-restaurant-selection-content-height;
+
+    &Header {
+      height: $simple-restaurant-selection-header-height;
+      padding: 25px 50px;
+      border-bottom: $border;
+      font-weight: 400;
+    }
+
+    &Content {
+      height: $simple-restaurant-selection-content-height - $simple-restaurant-selection-header-height - 1px;
+      background-color: $color-alabaster;
+    }
+
+  }
+
+  &-previewContainer {
+    display: inline-block;
+    width: calc(100% - 350px);
+    height: $simple-restaurant-selection-content-height;
+    border-left: $border;
+    vertical-align: top;
+  }
+}

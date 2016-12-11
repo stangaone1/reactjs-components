@@ -1,0 +1,55 @@
+@import '~assets/styles/settings/colors';
+
+$star-color: $color-silver;
+$star-filled-color: $color-malibu;
+$star-outter-background: #fff;
+
+.Rating {
+  display: flex;
+
+  &-star {
+    width: 10px;
+    height: 10px;
+    margin: 0 0 0 5px;
+    position: relative;
+    background: $star-color;
+
+    &--filled {
+      background: $star-filled-color;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    > div {
+      height: 100%;
+      position: absolute;
+      background: $star-filled-color;
+    }
+  }
+
+  &--hover {
+    .Rating-star {
+      background: $star-color;
+
+      &--hover {
+        background: $star-filled-color;
+      }
+    }
+  }
+
+  .Icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    fill: $star-outter-background;
+  }
+
+  &--clickable {
+    .Icon {
+      cursor: pointer;
+    }
+  }
+}

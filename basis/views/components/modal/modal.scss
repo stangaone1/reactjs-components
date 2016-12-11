@@ -1,0 +1,90 @@
+/*------------------------------------*\
+    Modal component
+\*------------------------------------*/
+@import "./modal-variables";
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $modal-width;
+  transform: translate(-50%, -50%);
+  outline: none;
+}
+
+.Modal--small {
+  width: $modal-small-width;
+}
+
+.Modal--extra-small {
+  width: $modal-extra-small-width;
+}
+
+.Modal--large {
+  width: $modal-large-width;
+}
+
+.Modal--extra-large {
+  width: 1300px;
+
+  .Modal-body {
+    max-height: 750px
+  }
+}
+
+.Modal-overlay {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(64, 64, 64, 0.78);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.Modal-content {
+  position: relative;
+
+  background: $color-white;
+  border-radius: 4px;
+
+  .Modal--padded & {
+    padding-left: $modal-padding;
+    padding-right: $modal-padding;
+  }
+}
+
+.Modal-close {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+
+  background-color: transparent;
+  border: none;
+
+  height: 24px;
+  width: 24px;
+
+  padding: 0;
+
+  > .Icon {
+    width: 9px;
+    height: 9px;
+
+    fill: $modal-close-icon-color;
+  }
+
+  &:hover {
+    > .Icon {
+      fill: $modal-close-icon-color-hover;
+    }
+  }
+}

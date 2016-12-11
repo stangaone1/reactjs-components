@@ -1,0 +1,41 @@
+@import '~assets/styles/settings/variables';
+
+.SectionStatus {
+  border-bottom: 1px solid $color-mercury;
+  width: 345px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .Status--incomplete:before {
+    background-color: $color-carnation;
+    border-color: $color-carnation;
+  }
+}
+
+.SectionStatus-text {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: $fw-medium;
+  color: $color-dove-gray;
+}
+
+.Icon--sectionStatus {
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+}
+
+.Status--sectionStatus {
+  display: inline-block;
+  float: right;
+  vertical-align: middle;
+}
+
+.Button--sectionStatus {
+  display: inline-block;
+  float: right;
+  vertical-align: middle;
+}

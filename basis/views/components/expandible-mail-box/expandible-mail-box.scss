@@ -1,0 +1,41 @@
+@import '~assets/styles/settings/variables';
+
+.ExpandibleMailBox {
+  height: 105px;
+  padding: 30px;
+  margin-bottom: 17px;
+  background-color: $color-white;
+  border: 1px solid $color-mercury;
+  border-radius: 8px;
+  user-select: none;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ExpandibleMailBox-title {
+  margin-bottom: 15px;
+  color: $color-mariner;
+  font-size: 18px;
+  font-weight: $fw-bold;
+}
+
+.ExpandibleMailBox-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 18px;
+}
+
+.ExpandibleMailBox--expanded {
+  height: auto;
+  background-color: $color-gallery;
+
+  .ExpandibleMailBox-content {
+    height: auto;
+    overflow: auto;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    GalleryFilters component
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$gallery-filters-reset-color: $color-azure-radiance;
+$gallery-filters-bg: $color-alabaster;
+$gallery-filters-header-color: $color-tundora;
+$gallery-filters-header-border: $color-silver;
+$gallery-filters-count-color: $color-gray;
+$gallery-height: 520px;
+
+.GalleryFilters {
+  width: 30%;
+  height: 100%;
+  min-height: $gallery-height;
+  padding: 30px;
+  float: left;
+
+  background: $gallery-filters-bg;
+}
+
+.GalleryFilters-header {
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+
+  border-bottom: 1px solid  $gallery-filters-header-border;
+}
+
+.GalleryFilters-title {
+  display: block;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  color: $gallery-filters-header-color;
+
+  text-transform: uppercase;
+}
+
+.GalleryFilters-search {
+  min-width: auto;
+}
+
+.GalleryFilters-count {
+  display: block;
+  margin-top: 15px;
+
+  font-size: 13px;
+
+  color: $gallery-filters-count-color;
+}
+
+.GalleryFilters-list {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  > li {
+    margin-bottom: 15px;
+  }
+}
+
+.GalleryFilters-reset {
+  color: $gallery-filters-reset-color;
+
+  text-align: right;
+
+  span {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

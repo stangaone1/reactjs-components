@@ -1,0 +1,85 @@
+@import "~assets/styles/settings/colors";
+
+$right-side-width: 400px;
+$RestaurantAction-height: 750px;
+$SidePreviewBackground: #eee;
+$border-color: $color-silver;
+$otherActionBorder-color: #D2D2D2;
+
+.SidePreview {
+  vertical-align: top;
+  position: relative;
+  width: $right-side-width;
+  padding: 30px 30px 140px 30px;
+  background: $SidePreviewBackground;
+  overflow: visible;
+  height: $RestaurantAction-height;
+  display: inline-block;
+
+  &-content {
+    height: 100%;
+    overflow: auto;
+    margin-top: 25px;
+  }
+
+  &Section {
+    padding: 28px 0;
+    border-bottom: 1px solid $border-color;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &Activity {
+    font-size: 13px;
+    font-weight: 400;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-key {
+      color: $color-gray;
+      display: inline;
+    }
+
+    &-value {
+      display: inline;
+      margin-left: 3px;
+    }
+
+    li {
+      margin-bottom: 15px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-actions {
+    background-color: $SidePreviewBackground;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    border-top: 1px solid $border-color;
+    padding: 25px 0;
+    margin: 0 22px;
+  }
+
+  &-actions-others {
+    margin-left: 20px;
+
+    > .Dropdown-button {
+      border: 1px solid $otherActionBorder-color;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 90px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

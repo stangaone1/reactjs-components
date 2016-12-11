@@ -1,0 +1,79 @@
+@import '~assets/styles/settings/colors';
+
+$pagination-page-text-color: $color-gray;
+$pagination-page-background-color-selected: $color-solitude;
+$pagination-page-text-color-selected: $color-azure-radiance;
+$pagination-arrows-color: $color-silver;
+
+.Pagination {
+// component style goes here;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+
+  > div {
+    display: inline-block;
+  }
+
+  .Pagination-prev,
+  .Pagination-next {
+    position: relative;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid $pagination-page-text-color-selected;
+      border-left: 2px solid $pagination-page-text-color-selected;
+    }
+
+    &--disabled {
+      cursor: auto;
+
+      &::before {
+        border-left-color: $pagination-arrows-color;
+        border-bottom-color: $pagination-arrows-color;
+      }
+    }
+  }
+
+  .Pagination-prev {
+    &::before {
+      left: 7px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .Pagination-next {
+    &::before {
+      right: 7px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .Pagination-page {
+    display: inline-block;
+    width: 23px;
+    height: 100%;
+    padding: 3px 0;
+    margin-right: 1px;
+    color: $pagination-page-text-color;
+    text-align: center;
+    cursor: pointer;
+
+    &--selected {
+      background-color: $pagination-page-background-color-selected;
+      color: $pagination-page-text-color-selected;
+      outline: 1px solid $pagination-page-text-color-selected;
+    }
+
+    &:hover {
+      color: $pagination-page-text-color-selected;
+    }
+  }
+}

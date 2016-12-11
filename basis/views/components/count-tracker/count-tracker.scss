@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    CountTracker component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$tracker-low: #c30;
+$tracker-medium: $color-lightning-yellow;
+$tracker-high: #3c3;
+
+.CountTracker {
+  display: inline-block;
+
+  // low count
+  &--low {
+    color: $tracker-low;
+  }
+
+  // medium count
+  &--medium {
+    color: $tracker-medium;
+  }
+
+  // high count
+  &--high {
+    color: $tracker-high;
+  }
+
+  // no color grading
+  // inherit from parent
+  &--nocolor {
+    color: inherit;
+  }
+}

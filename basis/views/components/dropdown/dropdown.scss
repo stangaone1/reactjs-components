@@ -1,0 +1,295 @@
+/*------------------------------------*\
+    Dropdown component
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$dropdown-button-arrow-size: 4px;
+$dropdown-button-bg: $color-white;
+$dropdown-button-bg-hover: $color-alabaster;
+$dropdown-button-border-color: $color-silver;
+$dropdown-button-border-radius: 17px;
+$dropdown-button-color: $color-dove-gray;
+$dropdown-button-padding: 30px;
+$dropdown-button-height: 35px;
+
+$dropdown-body-arrow-size: 10px;
+$dropdown-body-border-radius: 5px;
+$dropdown-body-height: 280px;
+$dropdown-body-padding: 30px;
+
+$dropdown-light-body-bg: $color-alabaster;
+$dropdown-light-body-border-color: #cecece;
+
+// dark
+$dropdown-dark-body-bg: $color-tundora;
+$dropdown-dark-body-color: $color-gray;
+
+//right
+$dropdown-body-right-offset: 30px;
+
+.Dropdown {
+  position: relative;
+
+  display: inline-block;
+
+  font: 11px/1 'Roboto', sans-serif;
+
+
+  .NotificationBubble {
+    position: absolute;
+    top: -8px;
+    right: 2px;
+
+    width: 20px;
+    height: 20px;
+
+    padding: 3px 0;
+
+    z-index: 2;
+
+    transform: none;
+
+    &:before {
+      padding: 0;
+
+      font-size: 18px;
+
+      content: '\00d7';
+    }
+  }
+
+  &--block {
+    display: block;
+  }
+}
+
+.Dropdown-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dropdown-button {
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  height: $dropdown-button-height;
+  padding: 0 $dropdown-button-padding 0 $dropdown-button-padding/2;
+
+  background: $dropdown-button-bg;
+  border: 1px solid $dropdown-button-border-color;
+
+  border-radius: $dropdown-button-border-radius;
+
+  font-size: 11px;
+
+  color: $dropdown-button-color;
+
+  text-align: left;
+  text-transform: uppercase;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: $dropdown-button-bg-hover;
+  }
+
+  //inner arrow
+  &:after {
+    position: absolute;
+    top: 45%;
+    right: $dropdown-button-padding/2 - $dropdown-button-arrow-size/2;
+
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    border-top: $dropdown-button-arrow-size solid $dropdown-button-border-color;
+    border-right: $dropdown-button-arrow-size solid transparent;
+    border-left: $dropdown-button-arrow-size solid transparent;
+
+    content: '';
+  }
+
+  &--open {
+    // button inner arrow
+    &:after {
+      margin-top: -$dropdown-button-arrow-size/2;
+      border-top: 0;
+      border-bottom: $dropdown-button-arrow-size solid $dropdown-button-border-color;
+    }
+  }
+
+  &--small {
+    height: 25px;
+  }
+
+  &--transparent {
+    min-width: auto;
+    height: auto;
+
+    padding: 0;
+    margin-right: 0;
+
+    background-color: transparent;
+    border: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--disabled {
+    background: $color-white;
+
+    border-color: #EBEBEB;
+    color: $color-silver;
+
+    cursor: default;
+    &:hover {
+      background: $color-white;
+    }
+    &:active {
+      background: $color-white;
+    }
+  }
+}
+
+.Dropdown-body {
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+
+  max-height: $dropdown-body-height;
+
+  border-radius: $dropdown-body-border-radius;
+
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .07);
+
+  user-select: none;
+
+  // Dropdown-body has padding
+  &--padded {
+    padding: $dropdown-body-padding;
+  }
+
+  // Dropdown-body positioned on left
+  &--left {
+    left: 0;
+  }
+
+  // Dropdown-body center positioned
+  &--center {
+    // left: -50%;
+    .Dropdown-arrow {
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  // Dropdown-body positioned on right
+  &--right {
+    right: -$dropdown-body-right-offset;
+
+    .Dropdown-arrow {
+      right: $dropdown-body-right-offset + $dropdown-button-padding/2 - 1;
+    }
+  }
+
+  // Dropdown-body dark theme
+  &--dark {
+    background: $dropdown-dark-body-bg;
+    color: $dropdown-dark-body-color;
+
+    .Dropdown-arrow {
+      background-color: $dropdown-dark-body-bg;
+      border-top: 1px solid $dropdown-dark-body-bg;
+      border-left: 1px solid $dropdown-dark-body-bg;
+    }
+  }
+
+  // Dropdown-body light theme
+  &--light {
+    background: $dropdown-light-body-bg;
+    border: 1px solid $dropdown-light-body-border-color;
+
+    .Dropdown-arrow {
+      border: none;
+      top: -$dropdown-body-arrow-size/2 - 1;
+      background: linear-gradient(135deg, rgba(251, 251, 251, 1) 54%, transparent 46%);
+
+      // ask chrome bugs why background gradient generates border
+      &:after {
+        content: '';
+        border-top: 1px solid $dropdown-light-body-border-color;
+        border-left: 1px solid $dropdown-light-body-border-color;
+        height: $dropdown-body-arrow-size;
+        width: $dropdown-body-arrow-size;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .DropdownMenu-item {
+      color: $color-dove-gray;
+
+      &:hover {
+        color: $color-gray;
+      }
+    }
+  }
+
+  &--inverse {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 15px;
+
+    .Dropdown-arrow {
+      top: auto;
+      bottom: -$dropdown-body-arrow-size / 2 - 1;
+      transform: rotate(225deg);
+    }
+  }
+
+  &--small {
+    width: 125px;
+  }
+
+  &--medium {
+    width: 250px;
+  }
+
+  &--large {
+    width: 330px;
+  }
+}
+
+//dropdown body fake arrow
+.Dropdown-arrow {
+  position: absolute;
+  z-index: 2;
+
+  top: -$dropdown-body-arrow-size/2;
+
+  width: $dropdown-body-arrow-size;
+  height: $dropdown-body-arrow-size;
+
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+
+  transform: rotate(45deg);
+}
+
+.Dropdown-padding {
+  padding: $dropdown-body-padding;
+}

@@ -1,0 +1,96 @@
+// ------------------------------------ //
+// 	DashboardCard component
+// ------------------------------------ //
+
+@import "~assets/styles/settings/colors";
+@import "~assets/styles/tools/mixins";
+
+$dashboardcard-backdrop: rgba(0, 0, 0, 0.7);
+$dashboardcard-border-radius: 5px;
+
+//
+//  Dashboard card
+//
+.DashboardCard {
+  position: relative;
+
+  display: inline-block;
+
+  width: 310px;
+  height: 350px;
+
+  background: $color-white;
+
+  border-radius: $dashboardcard-border-radius;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//
+//  Dashboard card options wrapper
+//
+.DashboardCard-options {
+  @include positionCenter;
+
+  opacity: 1;
+
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: $dashboardcard-border-radius;
+
+  transition: opacity 0.5s;
+
+  // state: hidden
+  &--hidden {
+    opacity: 0;
+
+    .DashboardCard-controls {
+      opacity: 0;
+      top: 55%;
+    }
+  }
+}
+
+//
+//  DashboardCard card controls / buttons
+//
+.DashboardCard-controls {
+  @include translateCenter;
+  z-index: 2;
+
+  text-align: center;
+
+  transition: all 0.2s ease-out;
+
+  button {
+    width: 110px;
+    margin: 12px 0;
+
+    color: $color-dove-gray;
+    font-weight: 700;
+  }
+}
+
+.DashboardCard-hitArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  display: block;
+
+  cursor: pointer;
+}
+
+.DashboardCard-background {
+  display: block;
+
+  > img {
+    width: 100%;
+  }
+}

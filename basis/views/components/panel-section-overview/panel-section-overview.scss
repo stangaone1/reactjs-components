@@ -1,0 +1,98 @@
+/*------------------------------------*\
+    PanelPagePreview component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$panel-border-color: $color-silver;
+$panel-border-radius: 5px;
+$panel-check-complete-color: $color-jungle-green;
+$panel-check-incomplete-color: $color-vivid-tangerine;
+$panel-header-bg-color: $color-gallery;
+$panel-status-completed-color: $color-jungle-green;
+
+.PanelPagePreview {
+  border: 1px solid $panel-border-color;
+  border-radius: $panel-border-radius;
+  display: block;
+  margin-bottom: 20px;
+  width: auto;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+}
+
+.PanelPagePreview-PageList {
+  padding-left: 0;
+}
+
+
+.PanelHeaderPagePreview {
+  background-color: $panel-header-bg-color;
+  border-radius: $panel-border-radius $panel-border-radius 0 0;
+  padding: 20px 30px;
+  border-bottom: 1px solid $panel-border-color;
+}
+
+.PanelHeaderPagePreviewLabel {
+  color: $color-mine-shaft;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.PanelHeaderPagePreviewStatus {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  color: $color-carnation;
+  margin-left: 20px;
+}
+
+.Completed .PanelHeaderPagePreviewStatus {
+  color: $panel-status-completed-color;
+}
+
+.PanelHeaderPagePreviewAction {
+  text-transform: uppercase;
+  float: right;
+}
+
+.PanelPagePreview-Page {
+  position: relative;
+  color: $color-gray;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 160px;
+
+  &.Completed:before {
+    position: absolute;
+    top: -4px;
+    bottom: 0;
+    left: 5px;
+    margin: auto;
+    width: 9px;
+    height: 5px;
+    border-bottom: 2px solid $panel-check-complete-color;
+    border-left: 2px solid $panel-check-complete-color;
+    content: '';
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &.Incomplete:before {
+    width: 6px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    margin: auto;
+    vertical-align: middle;
+    background-color: $color-vivid-tangerine;
+  }
+}

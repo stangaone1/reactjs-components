@@ -1,0 +1,21 @@
+@import '~assets/styles/settings/variables';
+
+.EditSection-sectionName {
+  margin-bottom: 15px;
+
+  font-size: 15px;
+  font-weight: $fw-medium;
+}
+
+.EditSection-parentSectionName {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: $fw-medium;
+  color: $color-gray;
+}
+
+.EditSection-checkbox {
+  width: 120px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

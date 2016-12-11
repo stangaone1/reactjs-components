@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    Card component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/variables';
+
+$card-padding: 20px;
+$card-border-color: $color-silver;
+$card-border-radius: 5px;
+$card-heading-border: $color-mercury;
+
+.Card {
+  padding: $card-padding;
+  background-color: $color-white;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+}
+
+.Card-heading {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid $card-heading-border;
+
+  font-size: 15px;
+  font-weight: $fw-medium;
+  line-height: 1;
+}
+
+.Card--warning {
+  background-color: $color-quarter-pearl-lusta;
+  border-color: $color-lightning-yellow;
+}

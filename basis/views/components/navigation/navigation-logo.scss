@@ -1,0 +1,15 @@
+@import '~assets/styles/tools/mixins/position';
+@import '~assets/styles/settings/colors';
+
+$navigation-bg: $color-mine-shaft;
+
+.MainNav-logo {
+  display: block;
+  height: 175px;
+
+  text-align: center;
+
+  background: $navigation-bg;
+
+  @include centerVertically();
+}

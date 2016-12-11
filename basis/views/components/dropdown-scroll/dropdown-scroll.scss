@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    DropdownScroll component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/colors';
+
+$dropdownscroll-padding: 30px;
+
+.DropdownScroll {
+  min-width: 200px;
+  
+  padding: $dropdownscroll-padding;
+}

@@ -1,0 +1,35 @@
+@import '~assets/styles/settings/colors';
+
+.ServerError {
+  width: 350px;
+  min-height: 35px;
+  height: auto;
+  margin: 0 0 0 -175px;
+  padding-left: 0;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+  }
+
+  > span {
+    padding: 5px 0;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #e45050;
+  }
+}

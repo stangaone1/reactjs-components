@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    SectionCardHeader component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/variables";
+
+.SectionCardHeader-title {
+  display: inline-block;
+
+  font-size: $fs-xxxl;
+  font-weight: $fw-bold;
+  text-align: center;
+  word-break: break-all;
+
+}
+
+.SectionCardHeader-content {
+  font-size: $fs-xs;
+  font-weight: $fw-normal;
+  color: $color-gray;
+  word-break: break-all;
+}
+
+.SectionCardHeader-icon {
+  margin-bottom: 30px;
+  fill: transparent;
+}

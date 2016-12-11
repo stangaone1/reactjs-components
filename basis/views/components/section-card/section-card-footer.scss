@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    SectionCardFooter component
+\*------------------------------------*/
+@import "~assets/styles/settings/variables";
+
+.SectionCardFooter-button {
+  margin-bottom: 40px;
+}
+
+.SectionCardFooter-content {
+  font-size: $fs-xs;
+  font-weight: $fw-normal;
+  color: $color-gray;
+  word-break: break-all;
+}
+
+.SectionCardFooter {
+  .Status {
+    display: inline-block;
+    margin-left: 12px;
+  }
+}
+
+.SectionCardHeader-icon {
+  .Icon {
+    height: 64px;
+    width: 64px;
+  }
+}

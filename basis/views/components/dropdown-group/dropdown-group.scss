@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    DropdownGroup component
+\*------------------------------------*/
+@import "~assets/styles/settings/variables";
+
+$dropdown-button-border-color: $color-silver;
+$dropdown-button-border-radius: 90px;
+
+.Dropdown-group {
+  display: inline-block;
+  visibility: visible;
+
+  .Dropdown-button {
+    width: 100%;
+
+    border-radius: 0;
+    border-left: 0;
+    font-weight: $fw-normal;
+    font-size: $fs-xxs;
+  }
+
+  .Dropdown:first-child > .Dropdown-button {
+    border-bottom-left-radius: $dropdown-button-border-radius;
+    border-top-left-radius: $dropdown-button-border-radius;
+    border-left: 1px solid $dropdown-button-border-color;
+  }
+
+  .Dropdown:last-child > .Dropdown-button {
+    border-bottom-right-radius: $dropdown-button-border-radius;
+    border-top-right-radius: $dropdown-button-border-radius;
+  }
+}
+
+.Dropdown-group--hidden {
+  visibility: hidden;
+}

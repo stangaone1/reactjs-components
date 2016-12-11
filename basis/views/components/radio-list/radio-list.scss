@@ -1,0 +1,35 @@
+@import '~assets/styles/settings/variables';
+
+
+.RadioList {
+// component style goes here;
+}
+
+.RadioList-element {
+  height: 60px;
+  margin-top: -1px;
+  padding-left: 30px;
+  border-top: 1px solid $color-mercury;
+  border-bottom: 1px solid $color-mercury;
+}
+
+.RadioList-element--selected {
+  position: relative;
+  background-color: $color-aero-blue;
+  border-bottom: 1px solid $color-algae-green !important;
+  border-top: 1px solid $color-algae-green;
+}
+
+.Radio--list {
+  top: 50%;
+  transform: translateY(-50%);
+  .Radio-text, .Radio-simulator {
+    vertical-align: top;
+    line-height: 17px;
+  }
+}
+
+.RadioList-Error {
+  padding: 5px 0 5px 30px;
+  color: $color-carnation;
+}

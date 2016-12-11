@@ -1,0 +1,79 @@
+@import '~assets/styles/settings/variables';
+
+.StepsBreadcrumbs {
+  background: $color-white;
+  user-select: none;
+  list-style: none;
+  padding: 33px 10px;
+  height: 100px;
+  margin: 0;
+
+  &-step {
+    display: inline-block;
+    font-family: $font-main;
+    font-size: 15px;
+    font-weight: $fw-medium;
+    text-transform: uppercase;
+
+    &:not(:first-of-type) {
+      margin-left: 13px;
+    }
+
+    &Element {
+      padding: 0 17px;
+      cursor: pointer;
+    }
+
+    &Number {
+      padding-right: 12px;
+      display: inline-block;
+      font-size: 30px;
+      margin-right: 19px;
+      border-right: 1px solid $color-mercury;
+      vertical-align: middle;
+      color: $color-anakiwa;
+    }
+
+    &Label {
+      display: inline-block;
+      vertical-align: middle;
+      color: $color-azure-radiance;
+    }
+
+    &--disabled {
+
+      .StepsBreadcrumbs-stepElement {
+        cursor: default;
+        cursor: not-allowed;
+      }
+
+      .StepsBreadcrumbs-stepLabel {
+        color: $color-gray;
+      }
+
+      .StepsBreadcrumbs-stepNumber {
+        border-right-color: $color-gray;
+        color: $color-gray;
+      }
+    }
+
+    &--current {
+      .StepsBreadcrumbs-stepElement{
+        cursor: default;
+      }
+      font-family: $font-main;
+      font-size: 15px;
+      font-weight: $fw-medium;
+      text-transform: uppercase;
+
+      .StepsBreadcrumbs-stepLabel {
+        color: $color-tundora;
+      }
+
+      .StepsBreadcrumbs-stepNumber {
+        border-right-color: $color-silver;
+        color: $color-tundora;
+      }
+    }
+  }
+}

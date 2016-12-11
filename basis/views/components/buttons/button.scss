@@ -1,0 +1,248 @@
+/*------------------------------------*\
+    Button component
+\*------------------------------------*/
+@import "~assets/styles/settings/colors";
+
+$button-default-border: $color-silver;
+$button-default-text: #838383;
+$button-default-hover-bkg: $color-alabaster;
+$button-default-active: $color-wild-sand;
+
+$button-height: 35px;
+
+$button-main-border: $color-jungle-green;
+$button-main-bg: $color-jungle-green;
+$button-main-text: $color-white;
+$button-main-active: #a8fdcd;
+$button-main-hover-bkg: lighten($button-main-bg, 10%);
+$button-selected-hover-bkg: $color-aero-blue;
+
+$button-apply-border: #27B67C;
+$button-apply-text: $color-white;
+$button-apply-hover-bkg: #27B67C;
+$button-apply-active: #27B67C;
+
+$button-disabled-text: $button-default-border;
+$button-disabled-border: #EBEBEB;
+
+$button-selected-border: $color-algae-green;
+$button-selected-text: $color-jungle-green;
+$button-selected-bkg: $button-selected-hover-bkg;
+
+$button-dropdown-arrow: $button-default-border;
+
+.Button {
+  position: relative;
+  min-width: 85px;
+
+  height: $button-height;
+
+  padding: 0 30px;
+  margin-right: 20px;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  background-color: $color-white;
+  border: 1px solid $button-default-border;
+  border-radius: 17px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+
+  color: $button-default-text;
+
+  &:hover {
+    background: $button-default-hover-bkg;
+  }
+
+  &:active {
+    background: $button-default-active;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &--anchor {
+    display: inline-block;
+    padding: 10px 30px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.Button--main {
+  height: $button-height;
+
+  background: $button-main-bg;
+  color: $button-main-text;
+  border-color: $button-main-border;
+  border-radius: 17px;
+
+  &:hover {
+    background: $button-main-hover-bkg;
+    border-color: $button-main-hover-bkg;
+
+  }
+  &:active {
+    background: $button-main-active;
+  }
+}
+
+.Button--apply {
+  height: $button-height;
+
+  border-radius: 17px;
+  background-color: $button-apply-border;
+  border-color: $button-apply-border;
+
+  color: $button-apply-text;
+  &:hover {
+    background: $button-apply-hover-bkg;
+  }
+  &:active {
+    background: $button-apply-active;
+  }
+}
+
+.Button--small {
+  height: 25px;
+
+  min-width: 60px;
+
+  padding: 0 20px;
+
+  border-radius: 12px;
+}
+
+.Button--selected {
+  background: $button-selected-bkg;
+
+  border-color: $button-selected-border;
+
+  color: $button-selected-text;
+  &:hover {
+    background: $button-selected-bkg;
+  }
+  &:active {
+    background: $button-selected-bkg;
+  }
+}
+
+.Button--centered {
+  left: 50%;
+
+  transform: translate(-50%, 0);
+}
+
+.Button--block {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+}
+
+.Button--dropdown {
+  min-width: 125px;
+
+  padding: 0 32px 0 15px;
+
+  text-align: left;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: $button-dropdown-arrow transparent transparent transparent;
+
+    transform: translate(0, -50%);
+
+    transition: all .3s;
+
+    content: '';
+  }
+}
+
+.Button--link {
+  min-width: initial;
+  height: auto;
+
+  padding: 0;
+  margin-right: 0;
+
+  background-color: transparent;
+  border: 0;
+
+  font-size: 12px;
+  color: $color-mariner;
+
+  text-transform: none;
+  white-space: normal;
+
+  &:hover, &:active {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+.Button--transparent {
+  min-width: auto;
+  height: auto;
+
+  padding: 0;
+  margin-right: 0;
+
+  background-color: transparent;
+  border: 0;
+}
+
+.Button--opened {
+  &:after {
+    transform: translate(0, -50%) rotate(180deg);
+  }
+}
+
+.Button--disabled {
+  background: $color-white;
+
+  border-color: $button-disabled-border;
+
+  color: $button-disabled-text;
+
+  cursor: default;
+  &:hover {
+    background: $color-white;
+    border-color: $button-disabled-border;
+  }
+  &:active {
+    background: $color-white;
+  }
+}
+
+.Button--primary:hover,
+.Button--primary {
+  background-color: $color-jungle-green;
+  color: $color-white;
+  border-color: $color-jungle-green;
+
+  &.Button--disabled{
+    background: $color-silver;
+    border-color: $button-disabled-border;
+  }
+
+  .Icon {
+    fill: $color-white;
+  }
+}

@@ -1,0 +1,30 @@
+@import "~assets/styles/settings/colors";
+@import '~assets/styles/settings/variables.scss';
+
+$label-color: $color-dove-gray;
+$label-size: $fs-xs;
+
+.SelectLabel {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+.SelectLabel-Label {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: $label-color;
+  font-family: $font-main;
+  font-size: $label-size;
+  line-height: $label-size - 2px;
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.SelectLabel-Select {
+
+}

@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    DropdownMenu component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$dropdown-menu-header-color: $color-jungle-green;
+$dropdown-menu-item-color: $color-silver;
+$dropdown-menu-item-color-hover: $color-white;
+
+.DropdownMenu {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.DropdownMenu-header {
+  margin-bottom: 20px;
+  padding: 0;
+
+  color: $dropdown-menu-header-color;
+
+  text-transform: uppercase;
+}
+
+.DropdownMenu-item {
+  margin-bottom: 15px;
+  padding: 0;
+
+  color: $dropdown-menu-item-color;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $dropdown-menu-item-color-hover;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.DropdownMenu-separator {
+  border-top: 1px solid $color-silver;
+  padding-top: 20px;
+}
+
+.DropdownMenu-disabled {
+  color: $color-dove-gray;
+  cursor: not-allowed;
+  &:hover {
+    color: $color-dove-gray;
+  }
+}

@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    NextPrev component
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$nextprev-icon-fill: $color-dove-gray;
+$nextprev-border: $color-silver;
+$nextprev-label-separator-color: $color-gray;
+
+.NextPrev {
+  display: inline-block;
+
+  .Button {
+    min-width: auto;
+    padding: 7px 20px;
+    margin: 0;
+
+    border-radius: 0;
+    font-size: 16px;
+
+    &--disabled .Icon {
+      opacity: .5;
+    }
+
+    &--primary .Icon {
+      fill: $color-white;
+    }
+  }
+
+  .Icon {
+    height: 10px;
+    fill: $color-dove-gray;
+  }
+
+  .NextPrev-prevButton {
+    border-right: 0;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      background: $nextprev-border;
+      width: 1px;
+      height: 33px;
+    }
+      .Icon {
+        transform: rotateZ(180deg);
+      }
+    }
+
+
+  .NextPrev-nextButton {
+    border-left: 0;
+
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 24px;
+
+  }
+}
+
+.NextPrev-buttons {
+  display: inline-block;
+}
+
+.NextPrev-label {
+  display: inline-block;
+
+  font-size: 14px;
+
+  &--right {
+    margin-left: 20px;
+    font-weight: 600;
+  }
+
+  &--left {
+    margin-right: 20px;
+  }
+}
+
+.NextPrev-labelSeparator {
+  color: $nextprev-label-separator-color;
+}
+
+.NextPrev-Icon {
+  width: 6px;
+  height: 10px;
+  fill: $nextprev-icon-fill;
+}

@@ -1,0 +1,89 @@
+/*------------------------------------*\
+    CheckboxSection component
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$checkbox-section-border-color: $color-silver;
+$checkbox-section-color: $color-dove-gray;
+$checkbox-section-active-border-color: $color-algae-green;
+$checkbox-section-active-bg-color: $color-white;
+$checkbox-section-input-size: 17px;
+$checkbox-section-input-margin: 15px;
+$checkbox-section-focused-color: $color-azure-radiance;
+$checkbox-section-checked-color: $color-tundora;
+
+$checkbox-section-simulator-border: $color-algae-green;
+
+.CheckboxSection {
+  padding: 20px 35px 20px 20px;
+  background-color: $checkbox-section-active-bg-color;
+  border: 1px solid $checkbox-section-border-color;
+  border-radius: 5px;
+  color: $checkbox-section-color;
+  cursor: pointer;
+  outline: none;
+
+  .Checkbox-text {
+    font-weight: 500;
+  }
+
+  &:focus:not(.CheckboxSection--disabled),
+  &--focused {
+    border-color: $checkbox-section-focused-color;
+
+    .CheckboxSection-text,
+    .Checkbox .Checkbox-text {
+      color: $checkbox-section-focused-color;
+    }
+  }
+
+  &--checked {
+    border-color: $checkbox-section-active-border-color;
+    color: $checkbox-section-checked-color;
+
+    .Checkbox-text {
+      color: $checkbox-section-checked-color;
+    }
+  }
+
+  &--disabled {
+    border-color: $checkbox-section-border-color;
+    cursor: default;
+  }
+
+  &--noText .Checkbox-text {
+    font-weight: normal;
+  }
+
+  &-text {
+    display: block;
+    padding: 10px 0 0 ($checkbox-section-input-size + $checkbox-section-input-margin);
+    font-size: 12px;
+  }
+
+  &--done {
+    input:checked ~ .Checkbox-simulator {
+      background: none;
+      border: 0;
+
+      &:before {
+        border-bottom: 2px solid $checkbox-section-simulator-border;
+        border-left: 2px solid $checkbox-section-simulator-border;
+      }
+    }
+  }
+
+  &--edit {
+    display: inline-block;
+
+    width: 310px;
+
+    margin-top: 20px;
+    margin-right: 30px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+}

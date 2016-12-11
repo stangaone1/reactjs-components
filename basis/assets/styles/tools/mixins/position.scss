@@ -1,0 +1,43 @@
+// ------------------------------------ //
+//  HELPERS
+// ------------------------------------ //
+
+//
+// Force Hardware Acceleration
+// (aka "null" transform hack)
+//
+@mixin noflicker {
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+}
+
+//
+// Positioning helpers
+//
+
+// Translate center
+@mixin translateCenter {
+    position:  absolute;
+    top:       50%;
+    left:      50%;
+    transform: translate(-50%, -50%);
+}
+
+// "Absolute margin auto" hack
+@mixin positionCenter {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin centerVertically() {
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}

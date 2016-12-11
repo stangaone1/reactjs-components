@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    DropdownList component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+.DropdownList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.DropdownList-Search-Container {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.DropdownList-Item {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 20px;
+
+  &:hover:not(.DropdownList-Item--active) {
+    background-color: #eee;
+  }
+
+  &:not(last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.DropdownList-Item--active {
+  background-color: #FFFFDD;
+}
+
+.DropdownList-Item-Title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.DropdownList-Item-Body {
+  color: #999;
+  margin: 0;
+}
+
+.DropdownList-Item-Check {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}

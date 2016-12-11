@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    PublishBoard actions
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$publishboard-border-color: $color-silver;
+$publishboard-button-green: $color-jungle-green;
+
+.PublishBoardActions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: calc(100% - 60px);
+  margin: 0 30px;
+  padding: 29px 0 30px;
+
+  border-top: 1px solid $publishboard-border-color;
+  box-sizing: border-box;
+
+  text-align: left;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.PublishBoardActions-Button {
+  margin: 0 10px;
+  padding: 0 30px;
+
+  &--green {
+    border-color: $publishboard-button-green;
+    color: $publishboard-button-green;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

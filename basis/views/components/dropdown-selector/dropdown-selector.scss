@@ -1,0 +1,210 @@
+/*------------------------------------*\
+    DropdownSelector component
+\*------------------------------------*/
+@import "~assets/styles/tools/mixins.scss";
+@import "~assets/styles/settings/colors";
+
+$dropdown-width: 420px;
+$dropdown-edit-width: 295px;
+$dropdown-gutter: 30px;
+$dropdown-border-radius: 5px;
+
+$dropdown-item-bg-color: $color-white;
+$dropdown-item-bg-color-hover: $color-alabaster;
+$dropdown-item-border-radius: 5px;
+$dropdown-item-border-color: $color-silver;
+
+$dropdown-item-active-bg-color-active: $color-aero-blue;
+$dropdown-item-active-border-color: $color-algae-green;
+
+.Dropdown-selector {
+  display: inline-block;
+
+  // open/close button
+  .Dropdown-button {
+    width: 200px;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+
+  // main container
+  .Dropdown-body {
+    width: $dropdown-width;
+    max-height: none;
+
+    background: #fff;
+
+    border-radius: $dropdown-border-radius;
+    @include container-shadow;
+
+    .InfiniteScroll {
+      position: relative;
+
+      height: 395px;
+      max-height: none;
+
+      padding: 15px $dropdown-gutter;
+      margin-bottom: $dropdown-gutter;
+    }
+  }
+
+  // search input
+  .DropdownList-Search-Container {
+    padding: 20px $dropdown-gutter;
+
+    background: $color-alabaster;
+
+    border-top-left-radius: $dropdown-border-radius;
+    border-top-right-radius: $dropdown-border-radius;
+
+    .InputField {
+      min-width: 100%;
+      margin-bottom: 0;
+
+      &-Input {
+        color: $color-gray;
+        font-size: 12px;
+
+        border-radius: 18px;
+      }
+    }
+  }
+
+  // no results message
+  .DropdownList-noResults {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    padding: 0 100px;
+
+    color: $color-gray;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+
+    text-align: center;
+  }
+
+  // item
+  .DropdownList-Item {
+    width: 100%;
+    height: 80px;
+
+    padding: 18px 20px;
+    margin-bottom: 15px;
+
+    background: $dropdown-item-bg-color;
+    border: 1px solid $dropdown-item-border-color;
+    border-radius: $dropdown-item-border-radius;
+
+    // last item in list
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // state: hover
+    &:hover:not(.DropdownList-Item--active) {
+      background: $dropdown-item-bg-color-hover;
+
+      .DropdownList-Item-Title,
+      .DropdownList-Item-Body {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  // item title
+  .DropdownList-Item-Title {
+    color: $color-dove-gray;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15px;
+
+    transition: transform 0.1s ease-in-out;
+  }
+
+  // item body
+  .DropdownList-Item-Body {
+    color: $color-mine-shaft;
+
+    font-size: 12px;
+
+    transition: transform 0.1s ease-in-out;
+  }
+
+  // item checkmark
+  .DropdownList-Item-Check {
+    display: none;
+  }
+
+  // state: active
+  .DropdownList-Item--active {
+    background-color: $dropdown-item-active-bg-color-active;
+    border-color: $dropdown-item-active-border-color;
+
+    .DropdownList-Item-Title {
+      color: $color-mine-shaft;
+    }
+  }
+
+  //
+  // special stacked item (CardsStack)
+  //
+  .DropdownList-Item-Stack {
+    &:before,
+    &:after {
+      content: '';
+
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid $dropdown-item-border-color;
+      border-radius: $dropdown-item-border-radius;
+    }
+
+    &:before {
+      top: 3px;
+      left: 3px;
+    }
+
+    &:after {
+      z-index: -2;
+
+      top: 5px;
+      left: 5px;
+    }
+
+    // state: active
+    &.DropdownList-Item--active {
+      &:before,
+      &:after {
+        background-color: $dropdown-item-active-bg-color-active;
+        border-color: $dropdown-item-active-border-color;
+      }
+    }
+  }
+}
+
+//
+//  EDIT modifier
+//
+.Dropdown-selector {
+  &--edit {
+    .Dropdown-body {
+      width: $dropdown-edit-width;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/*------------------------------------*\
+    NOTIFICATION BUBLE STYLES
+\*------------------------------------*/
+@import "~assets/styles/settings/colors";
+
+$bubble-background-color: $color-chablis;
+$bubble-border-color: $color-carnation;
+$bubble-background-color-hover: $color-vivid-tangerine;
+
+.NotificationBubble {
+  position: absolute;
+  top: 50%;
+
+  display: inline-block;
+
+  width: 54px;
+  height: 25px;
+
+  padding: 5px 0;
+
+  background: $bubble-background-color;
+  border: 1px solid $bubble-border-color;
+  border-radius: 10px;
+
+  font-size: 12px;
+  line-height: 1;
+
+  color: $bubble-border-color;
+  text-align: center;
+
+  white-space: nowrap;
+
+  transform: translate(50%, -50%);
+
+  user-select: none;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    top:-1px;
+    left:-1px;
+
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+
+    padding: 5px 0;
+
+    opacity: 0;
+
+    background-color: $bubble-background-color-hover;
+    border: 1px solid $bubble-border-color;
+    border-radius: 10px;
+
+    color: white;
+
+    transition: all .3s;
+
+    content: 'CLEAR';
+  }
+
+
+  &--hasClick:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &--hidden, &:empty {
+    display: none;
+  }
+}

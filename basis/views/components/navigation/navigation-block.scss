@@ -1,0 +1,161 @@
+@import '~assets/styles/tools/mixins/position';
+@import '~assets/styles/settings/colors';
+
+$navigation-bg: $color-mine-shaft;
+$navigation-border-color: $color-tundora;
+$navigation-color: $color-white;
+
+$navigation-item-color: $color-silver;
+$navigation-item-bg: $navigation-bg;
+$navigation-item-bg-hover: $color-tundora;
+$navigation-item-landing-color: $color-white;
+
+$navigation-item-notification-background-color: $color-mandy;
+$navigation-item-color-hover: $color-white;
+
+// dropdown
+$dropdown-nav-button-color: $color-lightning-yellow;
+$dropdown-nav-arrow-color: $color-lightning-yellow;
+
+.MainNav-block {
+  display: block;
+  padding: 30px 20px;
+
+  border-top: 1px solid $navigation-border-color;
+  background: $navigation-bg;
+}
+
+.MainNav-list {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.MainNav-itemWrap {
+  display: block;
+
+  &:last-child {
+    padding: 0;
+  }
+}
+
+.MainNav-item {
+  position: relative;
+  display: block;
+  padding: 8px 20px;
+
+  border-radius: 3px;
+
+  font-size: 13px;
+
+  background: $navigation-item-bg;
+  color: $navigation-item-color;
+
+  text-decoration: none;
+
+  transition: padding-left 100ms linear;
+
+  > .NotificationBubble {
+    right: 20px;
+
+    width: auto;
+    height: auto;
+
+    padding: 3px 7px;
+
+    background: $navigation-item-notification-background-color;
+
+    border-radius: 5px;
+
+    color: $color-white;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &--active {
+    background: $navigation-item-bg-hover;
+    transform: none;
+    color: $color-white;
+  }
+
+  &:hover {
+    padding-left: 25px;
+    background: rgba(64, 64, 64, .5);
+    color: $navigation-item-color-hover;
+    text-decoration: none;
+  }
+
+  &--active {
+    &:hover {
+      padding-left: 20px;
+      background: $navigation-item-bg-hover;
+    }
+  }
+}
+
+.MainNav-blockTitle {
+  margin: 0 0 20px 20px;
+
+  font-size: 15px;
+
+  color: $color-alabaster;
+}
+
+.MainNav-blockTitle,
+.MainNav-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.MainNav-submenu {
+  padding: 0 0 0 10px;
+}
+
+.MainNav-externalIcon {
+  position: absolute;
+  right: 20px;
+
+  width: 12px;
+  height: 12px;
+  fill: #818181;
+}
+//custom navigation dropdown
+.Dropdown--nav {
+  display: block;
+  margin: 0 0 20px 20px;
+
+  .Dropdown-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: none;
+    text-align: left;
+
+    background: none;
+
+    color: $dropdown-nav-button-color;
+    cursor: pointer;
+    outline: none;
+
+    &:after {
+      border-top-color: $dropdown-nav-arrow-color;
+    }
+
+    &--open {
+      &:after {
+        border-bottom-color: $dropdown-nav-arrow-color;
+      }
+    }
+  }
+}

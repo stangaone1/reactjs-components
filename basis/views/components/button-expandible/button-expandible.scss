@@ -1,0 +1,51 @@
+@import '~assets/styles/settings/variables';
+
+.ButtonExpandible {
+  position: relative;
+
+  .Button {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .Button {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.ButtonExpandible-container {
+  position: relative;
+  display: inline-block;
+  border: 1px solid $color-mine-shaft;
+  border-radius: 5px;
+  background-color: $color-tundora;
+  padding: 20px;
+  z-index: 2;
+
+  &:before {
+    position: absolute;
+    left: 25px;
+    top: -6px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-tundora;
+    border-left: 1px solid $color-mine-shaft;
+    border-top: 1px solid $color-mine-shaft;
+    transform: rotate(45deg);
+    content: "";
+  }
+
+  .Button {
+    display: block;
+    margin: 0 0 10px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+

@@ -1,0 +1,18 @@
+@import "~assets/styles/settings/colors";
+
+.AddMore {
+  margin-bottom: 15px;
+}
+
+.AddMore-title {
+  margin-bottom: 15px;
+}
+
+.AddMore-button {
+  color: $color-azure-radiance;
+  cursor: pointer;
+
+  &:before {
+    content: '+ ';
+  }
+}

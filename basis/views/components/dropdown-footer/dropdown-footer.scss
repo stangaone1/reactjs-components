@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    DropdownFooter component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/colors';
+
+$dropdownfooter-bg: $color-alabaster;
+$dropdownfooter-border-radius: 5px;
+$dropdownfooter-border: $color-mercury;
+$dropdownfooter-padding: 15px;
+
+.DropdownFooter {
+  padding: $dropdownfooter-padding 0;
+
+  background: $dropdownfooter-bg;
+  border-top: 1px solid $dropdownfooter-border;
+  border-radius: 0 0 $dropdownfooter-border-radius $dropdownfooter-border-radius;
+}

@@ -1,0 +1,89 @@
+/*------------------------------------*\
+    Navigation section component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/colors';
+
+$nav-section-backlink-bg: $color-cod-gray;
+$nav-section-backlink-hover-bg: $color-tundora;
+$nav-section-block-top-border: $color-tundora;
+$nav-section-back-link-color: $color-lightning-yellow;
+$nav-section-bullet-border: $color-carnation;
+$nav-section-bullet-full: $color-jungle-green;
+
+
+.MainNav-backlink {
+  display: block;
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  width: 240px;
+  padding: 42px 30px;
+
+  line-height: 1;
+  font-size: 13px;
+
+  background: $nav-section-backlink-bg;
+  color: $nav-section-back-link-color;
+  border-bottom: 1px solid #404040;
+
+  &:hover {
+    background: $nav-section-backlink-hover-bg;
+  }
+
+
+  .Icon {
+    position: relative;
+    top: 2px;
+
+    width: 8px;
+    height: 14px;
+    margin-right: 20px;
+
+    transform: rotate(.5turn); //TO DO: replace icon with back arrow and remove
+    fill: $nav-section-back-link-color;
+  }
+}
+
+.MainNav--section {
+  padding-top: 100px; // backlink height
+
+  .MainNav-item {
+    position: relative;
+    padding-left: 35px;
+
+    &:hover {
+      padding-left: 40px;
+    }
+  }
+
+  .MainNav-blockTitle {
+    display: block;
+    margin-left: 10px;
+  }
+}
+
+.MainNav-item--incomplete:before,
+.MainNav-item--complete:before {
+  content: '';
+
+  position: absolute;
+  top: 11px;
+  left: 10px;
+
+  display: block;
+
+  width: 12px;
+  height: 12px;
+
+  background: $nav-section-bullet-border;
+  border: 1px solid $nav-section-bullet-border;
+  border-radius: 5px;
+}
+
+.MainNav-item--complete {
+  &:before {
+    background-color: $nav-section-bullet-full;
+    border-color: $nav-section-bullet-full;
+  }
+}

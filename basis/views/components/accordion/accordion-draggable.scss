@@ -1,0 +1,158 @@
+/*------------------------------------*\
+    ACCORDION DRAGGABLE
+\*------------------------------------*/
+@import '~assets/styles/settings/colors';
+
+$accordion-draggable-drop-shadow-color: #e4e4e4;
+$accordion-draggable-drop-shadow-color-dragging: $color-silver;
+$accordion-draggable-background-color: $color-white;
+$accordion-draggable-background-color-dragging: $color-solitude;
+$accordion-draggable-border-color: $color-silver;
+$accordion-draggable-border-color-dragging: $color-anakiwa;
+$accordion-draggable-text-color: $color-dove-gray;
+$accordion-draggable-text-color-dragging: $color-mariner;
+$accordion-draggable-header-background-color-opened: $color-mine-shaft;
+
+
+.AccordionDraggable {
+  border: 0;
+
+  .AccordionSection {
+    background-color: inherit;
+
+    &:last-child .AccordionSectionBody {
+      margin-bottom: 0;
+    }
+
+    &:last-child .AccordionSectionHeader {
+      margin-bottom: 0;
+      border-bottom: 1px solid $accordion-draggable-border-color;
+    }
+
+    &:last-child .AccordionSectionBody-content {
+      border-top: 0;
+    }
+  }
+
+  .AccordionSectionHeader {
+    height: auto;
+
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    background-color: $accordion-draggable-background-color;
+    border: 1px solid $color-silver;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 $accordion-draggable-drop-shadow-color;
+
+    color: $accordion-draggable-text-color;
+    text-transform: none;
+
+  }
+
+  .AccordionSectionHeader-title {
+    padding-left: 28px;
+
+    &::before,
+    &::after {
+      left: 22px;
+      top: 15px;
+    }
+
+    &::before {
+      opacity: 1;
+
+      border-top: 2px solid $accordion-draggable-header-background-color-opened;
+      border-left: 2px solid $accordion-draggable-header-background-color-opened;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .AccordionSection--open {
+    .AccordionSectionHeader {
+      margin-bottom: 10px;
+
+      background-color: $accordion-draggable-header-background-color-opened;
+
+      font-weight: 500;
+
+      color: $accordion-draggable-background-color;
+
+      &-title{
+        &::before {
+          opacity: 1;
+
+          border-top: 2px solid $color-white;
+          border-left: 2px solid $color-white;
+        }
+      }
+    }
+
+    .AccordionSectionHeader-title {
+      &::before {
+        opacity: 1;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &:last-child .AccordionSectionHeader {
+      margin-bottom: 10px;
+    }
+  }
+
+  .AccordionSectionBody {
+    padding: 0 0 0 10px;
+    margin-bottom: 5px;
+  }
+
+  .AccordionSectionBody-content {
+    padding: 5px 0 5px 18px;
+    margin-bottom: 5px;
+
+    border: solid $accordion-draggable-border-color;
+    border-width: 0 0 0 2px;
+  }
+
+  .Sort-element,
+  .Sort-element--dragging {
+    padding: 15px;
+    margin-bottom: 15px;
+
+    overflow: hidden;
+
+    background-color: $accordion-draggable-background-color;
+    border: 1px solid $color-silver;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 $accordion-draggable-drop-shadow-color;
+
+    font-size: 12px;
+
+    color: $accordion-draggable-text-color;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .Sort-element:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .Sort-element--dragging {
+    background-color: $accordion-draggable-background-color-dragging;
+    border-color: $accordion-draggable-border-color-dragging;
+    box-shadow: 0 2px 2px 0 $accordion-draggable-drop-shadow-color-dragging;
+
+    font-weight: 500;
+
+    color: $accordion-draggable-text-color-dragging;
+  }
+}

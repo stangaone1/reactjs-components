@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    ModalBody component
+\*------------------------------------*/
+@import "./modal-variables";
+
+.Modal-body {
+  padding-top: $modal-padding;
+  padding-bottom: $modal-padding;
+
+  max-height: 558px;
+
+  overflow-y: auto;
+
+  .Notification {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}

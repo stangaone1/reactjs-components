@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    PublishBoard controls
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+.PublishBoardControls {
+  position: relative;
+
+  width: 100%;
+  padding: 30px;
+}
+
+.PublishBoardControls-CloseButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  display: inline-block;
+
+  width: 9px;
+  height: 9px;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  > .Icon {
+    width: inherit;
+    height: inherit;
+
+    fill: #939393;
+
+    vertical-align: top;
+  }
+}

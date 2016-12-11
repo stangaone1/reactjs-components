@@ -1,0 +1,29 @@
+@import "~assets/styles/settings/variables";
+
+.PanelContent--day {
+  display: flex;
+}
+
+.Day-status {
+  //width: 100%;
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Day-title {
+  float: left;
+  margin-top: 5px;
+  color: $color-mine-shaft;
+  font-weight: $fw-medium;
+  font-size: 13px;
+}
+
+.DayTime {
+  margin-top: 20px;
+}
+
+.DayTime-separator {
+  margin: 0 10px;
+}

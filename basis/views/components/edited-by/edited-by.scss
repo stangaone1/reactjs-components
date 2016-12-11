@@ -1,0 +1,22 @@
+.EditedBy {
+
+  &-othersLists{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
+
+  .Dropdown-body{
+    width: auto;
+  }
+
+  &-othersUser:not(:last-of-type){
+    //padding: 0;
+    padding-bottom: 10px;
+  }
+
+  .UserName:not(:last-of-type):after{
+    content: ", ",
+  }
+}

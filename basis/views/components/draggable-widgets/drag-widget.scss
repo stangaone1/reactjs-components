@@ -1,0 +1,28 @@
+@import '~assets/styles/settings/colors';
+
+$dragWidgetContainer-border: 3px;
+
+.DragWidget {
+  &Container {
+    border: $dragWidgetContainer-border solid transparent;
+    background-color: $color-white;
+
+    &--canDrop {
+      border: $dragWidgetContainer-border dashed $color-silver;
+    }
+
+    &--active{
+      background-color: $color-alabaster;
+    }
+  }
+
+  &Item {
+    cursor: pointer;
+    cursor: -webkit-grab;
+    cursor: grab;
+
+    &--dragging {
+      opacity: 0.3;
+    }
+  }
+}

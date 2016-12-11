@@ -1,0 +1,98 @@
+.VideoSelector {
+  .Modal-body {
+    padding: 0;
+    height: 617px;
+    max-height: 617px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .TabContent-List {
+    position: relative;
+    overflow: hidden;
+    height: 520px;
+  }
+
+  .TabArea {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .TabList {
+    margin-bottom: 0;
+
+    &-Navigation {
+      padding: 30px 30px 0 30px;
+    }
+  }
+
+  iframe {
+    height: 520px;
+  }
+
+  &-galleryImage {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &-newVideo {
+
+    &--noVideo {
+      width: 325px;
+      margin: 120px auto;
+      text-align: center;
+      color: #939393;
+      font-family: Roboto;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 48px;
+
+      .Icon {
+        width: 96px;
+        height: 96px;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  .Gallery {
+    margin: 0 30px;
+
+    &-photoGrid {
+      margin: 0;
+    }
+  }
+
+  .Modal-footer {
+    text-align: right;
+    border-top-color: #e4e4e4;
+  }
+
+  &-clearVideo {
+    float: left;
+  }
+}
+
+.VideoSelector-uploadBox {
+  height: 520px;
+
+  .UploadBox-dropzone {
+    border-radius: 0;
+  }
+
+  .UploadBox-contentControls {
+    position: relative;
+    top: 110px;
+  }
+}
+
+.VideoSelector--player {
+  width: 978px;
+  height: 520px;
+}

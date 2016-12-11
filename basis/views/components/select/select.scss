@@ -1,0 +1,253 @@
+@import '~assets/styles/settings/colors';
+
+$select-animation-speed: 300ms;
+$select-height: 35px;
+$select-dropdown-height: 385px;
+$select-hover-color: $color-alabaster;
+$select-focused-color: $color-azure-radiance;
+$select-disable-color: $color-mercury;
+
+$select-label-color: $color-tundora;
+$select-label-unused-color: $color-gray;
+$select-arrow-border: $color-gray;
+$select-arrow-opened-border: $color-azure-radiance;
+$select-label-hover-bg: $color-alabaster;
+$select-opened-border: $color-malibu;
+$select-label-opened-color: $color-malibu;
+
+$select-option-border: $color-mercury;
+
+$border: (
+        default: $color-silver,
+        focus: $color-malibu,
+        error: $color-carnation,
+        success: $color-jungle-green,
+);
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: $select-dropdown-height;
+  }
+}
+
+.Select {
+  position: relative;
+  height: $select-height;
+  max-height: $select-height;
+  overflow: visible;
+  background: $color-white;
+  border: 1px solid $color-silver;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    .Select-InputLabel {
+      background: $select-label-hover-bg;
+    }
+  }
+
+  &:focus:not(&--disabled) {
+    color: $select-focused-color;
+    border-color: $select-focused-color;
+
+    .Select-InputLabel {
+      color: $select-focused-color;
+    }
+  }
+
+  &--hasValue &-InputLabel {
+    color: $select-label-color;
+  }
+
+  &--opened {
+    border-color: $select-opened-border;
+    animation: focus-pulse 1s 1;
+
+    .Select-Dropdown {
+      display: block;
+      max-height: $select-dropdown-height;
+
+      &-List {
+        max-height: $select-dropdown-height;
+        animation: slideDown $select-animation-speed;
+      }
+    }
+
+    .Select-InputLabel {
+      color: $select-label-opened-color;
+    }
+
+    .Select-InputLabel-Arrow {
+      transform: rotate(180deg);
+      border-top-color: $select-arrow-opened-border;
+    }
+
+    &:hover {
+      .Select-InputLabel {
+        background: $color-white;
+      }
+    }
+  }
+
+  &--required {
+    &:after {
+      content: "";
+      position: absolute;
+      right: -15px;
+      top: 0;
+      z-index: 2;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #5cb4ff;
+    }
+  }
+
+  &--error {
+    border: 1px solid map-get($border, error);
+    &.Select--required {
+      &:after {
+        background: map-get($border, error);
+      }
+    }
+  }
+
+  .Select-InputLabel-Text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &--multiple {
+    .Select-Option--selected:after {
+      position: absolute;
+      top: -2px;
+      width: 9px;
+      height: 5px;
+      margin: auto;
+      border-bottom: 2px solid $select-label-color;
+      border-left: 2px solid $select-label-color;
+      transform: rotate(-45deg);
+      bottom: 0;
+      left: 5px;
+      content: '';
+    }
+  }
+
+  &-Dropdown {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    margin-top: 1px;
+    display: none;
+    width: 100%;
+    max-height: 0;
+    background: $color-white;
+    border: 1px solid $color-silver;
+    border-top: 0;
+    overflow-y: hidden;
+
+    &-List {
+      position: relative;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow-x: auto;
+    }
+  }
+
+  &-Option {
+    position: relative;
+    display: block;
+    padding: 13px 20px;
+    color: $select-label-color;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 1;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $select-option-border;
+    }
+
+    &--focused {
+      background: $select-hover-color;
+    }
+
+    &--disabled {
+      color: $color-silver;
+
+    }
+  }
+
+  &-Label {
+    display: block;
+    margin-bottom: 15px;
+    color: #6a6a6a;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 10px;
+  }
+
+  &-InputLabel {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 0 34px 0 15px;
+    line-height: $select-height;
+    color: $select-label-unused-color;
+    user-select: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &-Arrow {
+      position: absolute;
+      top: 45%;
+      right: 15px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 4px solid $select-arrow-border;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      transition: transform $select-animation-speed linear;
+      content: '';
+    }
+  }
+
+
+
+  &--disabled,
+  &--disabled:hover {
+    .Select-InputLabel {
+      background: $select-disable-color;
+      border-color: $color-mercury;
+    }
+  }
+}
+
+.Select-error {
+  margin: 0;
+  padding: 5px 15px 0;
+  color: #f15a5a;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+@keyframes focus-pulse {
+  0% {
+    box-shadow: 0 0 2px 1px rgba($color-malibu, 0);
+  }
+  50% {
+    box-shadow: 0 0 2px 1px rgba($color-malibu, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 2px 1px rgba(map-get($border, focus), 0);
+  }
+}

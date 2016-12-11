@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    CheckboxPermission component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$check-permission-arrow-size: 5px;
+$check-permission-body-bg-color: $color-alabaster;
+$check-permission-body-border-color: $color-silver;
+
+.Permission-checkbox {
+  position: relative;
+  display: inline-block;
+
+  &--stretched {
+    display: block;
+  }
+}
+
+.Permission-dropdownBody {
+  position: relative;
+  min-width: 150px;
+  margin-top: 25px;
+  border: 1px solid $check-permission-body-border-color;
+  background-color: $check-permission-body-bg-color;
+  border-radius: 5px;
+
+  &:before {
+    position: absolute;
+    left: 25px;
+    top: -6px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $check-permission-body-bg-color;
+    border-left: 1px solid $check-permission-body-border-color;
+    border-top: 1px solid $check-permission-body-border-color;
+    transform: rotate(45deg);
+    content: "";
+  }
+}
+
+.Permission-dropdownMenu {
+  margin: 20px 35px 20px 25px;
+  padding: 0;
+  list-style: none;
+}
+
+.Dropdown-menuItem {
+  padding-bottom: 15px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

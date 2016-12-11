@@ -1,0 +1,167 @@
+@import '~assets/styles/settings/colors';
+@import '~assets/styles/settings/variables';
+
+$bannerCardWidth: 310px;
+$bannerCardHeight: 430px;
+
+$bannerCardImageWidth: 300px;
+$bannerCardImageHeight: 250px;
+
+$bannerCardBackground: $color-white;
+$bannerCardBorderColor: $color-silver;
+
+$bannerCardTitle: $color-tundora;
+$bannerCardAvailability: $color-gray;
+
+$bannerCardListItemBackground: $color-alabaster;
+$bannerCardListItemBackgroundActive: $color-gallery;
+
+$bannerCardFill: $color-gray;
+$bannerCardFillActive: $color-jungle-green;
+
+.BannerCard {
+  position: relative;
+  margin: 15px 15px;
+  padding: 4px;
+
+  display: inline-block;
+  width: $bannerCardWidth;
+  height: $bannerCardHeight;
+
+  background: $bannerCardBackground;
+  border: 1px solid $bannerCardBorderColor;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  font-size: 0;
+}
+
+.BannerCard-Image {
+  position: relative;
+
+  width: $bannerCardImageWidth;
+  height: $bannerCardImageHeight;
+
+  background: $color-mine-shaft;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+
+  &--hasImage {
+    background: none;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    width: 100%;
+  }
+}
+
+.BannerCard-PublishButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.BannerCard-Title {
+  margin: 0;
+  padding: 30px;
+
+  color: $bannerCardTitle;
+  font-size: $fs-m + 1px;
+  font-weight: $fw-bold;
+  text-align: center;
+}
+
+.BannerCard-Availability {
+  margin: 0;
+  padding: 30px;
+
+  color: $bannerCardAvailability;
+  font-size: $fs-xs;
+  font-weight: $fw-normal;
+  line-height: $fs-xs - 5px;
+  text-align: center;
+
+  .date {
+    color: $bannerCardTitle;
+  }
+}
+
+.BannerCard-SizeList {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  list-style-type: none;
+  list-style-image: none;
+
+  font-size: 0;
+  text-align: center;
+}
+
+.BannerCard-SizeListItem {
+  display: inline-block;
+
+  margin: 0 5px;
+  padding: 3px 10px;
+
+  background: $bannerCardListItemBackground;
+  border: 1px solid $bannerCardListItemBackgroundActive;
+
+  color: $bannerCardAvailability;
+  font-size: $fs-xs;
+  font-weight: $fw-normal;
+  text-align: center;
+
+  &.active {
+    background: $bannerCardListItemBackgroundActive;
+
+    color: $bannerCardTitle;
+
+    .BannerCard-Icon {
+      width: 12px;
+      height: 10px;
+      margin: 3px 8px 0 0;
+
+
+      fill: $bannerCardFillActive;
+    }
+  }
+
+  span {
+    vertical-align: top;
+  }
+}
+
+.BannerCard-Icon {
+  width: 8px;
+  height: 8px;
+
+  margin: 4px 8px 0 0;
+
+  vertical-align: top;
+
+  fill: $bannerCardFill;
+}
+
+.BannerCard-ClickArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+  display: block;
+
+  cursor: pointer;
+}

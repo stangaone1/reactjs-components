@@ -1,0 +1,23 @@
+.ConfirmSelectedRestaurants-container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.ConfirmSelectedRestaurants-restaurant {
+  float: left;
+  width: 50%;
+  margin-bottom: 30px;
+
+  &:nth-child(2n) {
+    padding-left: 15px;
+  }
+
+  &:nth-child(2n+1) {
+    clear: left;
+    padding-right: 15px;
+  }
+
+  &:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+}

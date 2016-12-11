@@ -1,0 +1,15 @@
+// ------------------------------------ //
+// 	Common effects
+// ------------------------------------ //
+
+@mixin container-shadow {
+  $container-shadow-offsetX: 2.5px;
+  $container-shadow-offsetY: 4.3px;
+  $container-shadow-blur-radius: 5px;
+  $container-shadow-bg: rgba(1, 1, 1, 0.1);
+
+  box-shadow: $container-shadow-offsetX
+              $container-shadow-offsetY
+              $container-shadow-blur-radius
+              $container-shadow-bg;
+}

@@ -1,0 +1,272 @@
+// ------------------------------------ //
+//  Page / layout components
+// ------------------------------------ //
+@import "~assets/styles/settings/colors";
+
+// settings
+$page-gutter: 30px;
+$page-background: $color-mercury;
+$previewWidth: 1300px;
+$previewHeight: 780px;
+//
+//  Page
+//
+.Page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+//
+//  Page navigation sidebar
+//
+.Page-navigation {
+  flex-shrink: 0; // prevent sidebar from shrinking
+
+  min-height: 100vh;
+  width: 250px;
+
+  background: $color-mine-shaft;
+  color: $color-white;
+}
+
+//
+//  Page section container
+//
+.Page-container {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  flex-grow: 1; // take up all the space left
+
+  background: $page-background;
+}
+
+//
+//  Page section header
+//
+.Page-header {
+  padding: 20px $page-gutter;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+//
+//  Page section body
+//
+.Page-body {
+  position: relative;
+  width: (1050px + 2 * $page-gutter);
+  padding: $page-gutter;
+}
+
+//
+//  Page section footer
+//
+.Page-footer {
+  padding: 20px $page-gutter;
+}
+
+//
+//  Page fixed header for wizard pages
+//
+.Page-Wizzard {
+  padding-top: 100px;
+}
+
+.PageContainerWizzard .StepsBreadcrumbs {
+  z-index: 98;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+//
+//  General HQ Page component styles
+//
+.Page-Hq {
+  .Setup {
+    position: relative;
+  }
+  .SetupStatus--incomplete:before,
+  .SetupStatus--uncomplete:before,
+  .SetupStatus--complete:before {
+    content: '';
+
+    position: absolute;
+    top: 5px;
+    left: 30px;
+
+    display: block;
+
+    width: 12px;
+    height: 12px;
+
+    border: 1px solid $color_gray;
+    border-radius: 5px;
+  }
+
+  .SetupStatus--complete {
+    &:before {
+      background-color: $color-jungle-green;
+      border-color: $color-jungle-green;
+    }
+  }
+  .SetupStatus--incomplete {
+    &:before {
+      background-color: $color-lightning-yellow;
+      border-color: $color-lightning-yellow;
+    }
+  }
+  .SetupStatus--uncomplete {
+    &:before {
+      background-color: $color-carnation;
+      border-color: $color-carnation;
+    }
+  }
+  .NetworkPreviewModal {
+    width: $previewWidth;
+    min-height: $previewHeight;
+  }
+
+  .NetworkPreview-NetworkButton {
+    position: relative;
+    margin-right: 30px !important;
+    z-index: 2;
+    float: right;
+  }
+  .NetworkButton {
+    &--events {
+      margin-top: -95px;
+    }
+  }
+
+  .Pagination {
+    display: inline-block;
+    padding: 20px 20px 0 30px;
+  }
+
+  .Pagination-label {
+    float: right;
+
+    display: inline-block;
+
+    padding: 20px 20px 0 30px;
+    margin-right: 30px;
+
+    color: $color-silver
+
+  }
+  .NoResults {
+    text-align: center;
+    padding: 60px 0 45px 0;
+
+    font-size: 13px;
+
+    color: #939393;
+
+    strong {
+      padding-bottom: 30px;
+    }
+
+    &--withQuery {
+      border-top: solid 1px $color-silver;
+      padding-bottom: 60px;
+    }
+
+    &-paragraph {
+      &--highlighted {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 20px;
+        color: $color-dove-gray;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .Tabs-item a,
+  .Panels {
+    background: $color-wild-sand;
+  }
+
+  .Panels {
+    padding: 20px;
+
+    border: 1px solid $color-silver;
+    border-top: 0;
+  }
+
+  .TabArea {
+    padding: 30px 0 30px 0;
+  }
+
+  .TabList {
+    margin: 30px 30px 0 30px;
+  }
+
+  .Table--fixedLeft {
+    border-left: 0;
+  }
+
+  .Table--fixedRight {
+    border-right: 0;
+  }
+
+  .Table:not(.Table--fixedLeft, .Table--fixedRight) {
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .TableFilters-filter {
+    .Dropdown-body {
+      width: auto;
+      max-height: none;
+    }
+
+    .Dropdown-body .NotificationBubble {
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  .Setup-filters {
+    margin-bottom: 30px;
+    margin-left: 30px;
+
+    .TableBulkActions {
+      margin-right: 20px;
+    }
+
+    .TableBulkActions-enter {
+      opacity: 0.01;
+    }
+
+    .TableBulkActions-enter.TableBulkActions-enter-active {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+
+    .TableBulkActions-leave {
+      opacity: 1;
+    }
+
+    .TableBulkActions-leave.TableBulkActions-leave-active {
+      opacity: 0.01;
+      transition: opacity 300ms ease-in;
+    }
+  }
+
+  .Preloader {
+    float: right;
+    margin: 0;
+  }
+}

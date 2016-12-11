@@ -1,0 +1,108 @@
+@import '~assets/styles/settings/variables';
+
+$multiple-button-dropdown-arrow: 10px;
+$multiple-button-dropdown-bg: $color-cod-gray;
+
+.ButtonMultiple {
+  display: inline-block;
+  position: relative;
+  background-color: $color-alabaster;
+  border: 1px solid $color-silver;
+  border-radius: 90px;
+
+  user-select: none;
+
+  &-main {
+    display: inline-block;
+
+  }
+
+  &--multipleButtons &-main {
+    .Button {
+      padding: 0 20px 0 30px;
+    }
+  }
+
+  &--open &-arrow {
+
+    &Button {
+      border-bottom: 1px solid $color-white;
+      border-left: 1px solid $color-white;
+    }
+  }
+  &-arrow {
+    padding: 5px 15px;
+    margin: 5px 0;
+    border-left: 1px solid $color-gallery;
+    cursor: pointer;
+
+    &Button {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px solid $color-silver;
+      border-left: 1px solid $color-silver;
+      height: $multiple-button-dropdown-arrow;
+      width: $multiple-button-dropdown-arrow;
+      transform: rotate(-45deg);
+
+    }
+  }
+  &--open &-arrow {
+    border-left: 0;
+    &:after {
+      position: absolute;
+
+      bottom: -16px;
+      right: 16px;
+
+      content: '';
+      transform: rotate(45deg);
+      background-color: $multiple-button-dropdown-bg;
+      height: $multiple-button-dropdown-arrow;
+      width: $multiple-button-dropdown-arrow;
+    }
+  }
+
+  &-container {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1px; // don't ask, stupid pixel bug
+  }
+
+  &--open &-container {
+    background: $multiple-button-dropdown-bg;
+    border-bottom-right-radius: 90px;
+    border-top-right-radius: 90px;
+  }
+
+  .Button {
+    background: none;
+    border: 0;
+    border-radius: 0;
+  }
+
+  &-dropdown {
+    position: absolute;
+    left: 50%;
+    display: none;
+    padding: 0;
+    margin-left: -50%;
+    list-style: none;
+    background-color: $multiple-button-dropdown-bg;
+    border-radius: 10px;
+    transform: translateX(-50%) translateX(20px);
+
+    .Button {
+      color: $color-jungle-green;
+    }
+  }
+
+  &--twoButtons &-dropdown {
+    border-radius: 90px;
+
+  }
+  &--open &-dropdown {
+    display: block;
+  }
+
+}

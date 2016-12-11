@@ -1,0 +1,170 @@
+@import '~assets/styles/settings/colors';
+
+$widgetBorderColor: $color-silver;
+$headerBackgroundExpanded: $color-mine-shaft;
+$genericTextColor: $color-tundora;
+$headerTextColorConfigure: $color-white;
+$saveSettingsContainerBackground: $color-gallery;
+
+$headerSize: 64px;
+$borderRadiusTop: 4px 4px 0 0;
+$borderRadiusBottom: 0 0 4px 4px;
+$genericAroundPadding: 20px;
+$genericSidePadding: 0 20px;
+
+.PublishingPlatformWidget {
+  position: relative;
+  outline: none;
+
+  .WidgetHeader {
+    position: relative;
+    padding: $genericSidePadding;
+    height: $headerSize;
+    line-height: $headerSize;
+    border-radius: $borderRadiusTop;
+    text-transform: uppercase;
+    color: $genericTextColor;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .ConfigureWidget {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    height:20px;
+
+
+    .Icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .RemoveWidget {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+    .Icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .WidgetLabel {
+    margin-left: 36px;
+    font-size: 13px;
+  }
+
+  &--focused {
+    .Icon--widget-cog{
+      fill: $color-jungle-green;
+    }
+
+    .WidgetHeader {
+      background: $headerBackgroundExpanded;
+    }
+
+    .WidgetConfig:before {
+      content: '';
+      top: -2px;
+      left: 30px;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      transform: translateX(-50%) rotate(45deg);
+      background: #fff;
+    }
+
+    .ConfigureWidget {
+      fill: $headerTextColorConfigure;
+    }
+
+    .RemoveWidget {
+      fill: $headerTextColorConfigure;
+    }
+
+    .WidgetLabel {
+      color: $headerTextColorConfigure;
+    }
+  }
+
+  .WidgetPreview {
+    border-radius: $borderRadiusBottom;
+    overflow: hidden;
+    height: auto;
+
+    // hack - the images should have a fixed and well-defined width
+    .WidgetPreview-image {
+      display: block;
+      max-width: 286px;
+    }
+  }
+
+  .WidgetConfig {
+    display: none;
+    position: relative;
+    // top: $headerSize;
+    z-index: 2;
+    width: 100%;
+    border-radius: $borderRadiusBottom;
+    background: $color-white;
+
+    &--opened {
+      display: block;
+    }
+
+    .ConfigForm {
+      padding: 15px $genericAroundPadding $genericAroundPadding;
+      color: $genericTextColor;
+
+      .WidgetConfigField {
+        margin-bottom: 15px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      .WidgetConfigField-label {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: bold;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      .Checkbox-text {
+        font-weight: normal;
+      }
+    }
+
+    .SaveSettings-Container {
+      padding: $genericAroundPadding;
+      background: $saveSettingsContainerBackground;
+      border-radius: $borderRadiusBottom;
+
+      .Button {
+        width: 100%;
+      }
+    }
+  }
+}

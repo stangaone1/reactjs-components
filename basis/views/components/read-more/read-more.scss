@@ -1,0 +1,20 @@
+@import '~assets/styles/settings/colors';
+
+.ReadMore {
+
+  &-Content {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &-Button {
+      display: inline-block;
+      text-decoration: underline;
+      color: $color-azure-radiance;
+      cursor: pointer;
+  }
+
+  &--expand &-Content{
+    display: block;
+  }
+}

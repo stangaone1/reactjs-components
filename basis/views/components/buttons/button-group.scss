@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    ButtonGroup component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+@mixin buttonGroupBorderSetMixin($borderSize) {
+  &:first-child {
+    border-bottom-left-radius: $borderSize;
+    border-top-left-radius: $borderSize;
+  }
+  &:last-child {
+    border-bottom-right-radius: $borderSize;
+    border-top-right-radius: $borderSize;
+  }
+}
+
+.ButtonGroup {
+  position: relative;
+  display: inline-block;
+
+  > .Button {
+    position: relative;
+    padding: 0 15px;
+    margin: 0 0 0 -1px;
+    z-index: 1;
+    text-align: center;
+    border-radius: 0;
+
+    @include buttonGroupBorderSetMixin(17px);
+
+    &--small {
+      @include buttonGroupBorderSetMixin(12px);
+    }
+  }
+
+  .Button--dropdown {
+    min-width: 80px;
+
+    padding: 0 15px;
+
+    text-align: center;
+    &:after {
+      right: 13px;
+    }
+  }
+
+  .Button--selected {
+    z-index: 2;
+  }
+
+  .Button--disabled {
+    z-index: 0;
+  }
+}
+
+.ButtonGroup--block {
+  display: block;
+
+  width: 100%;
+}
+
+.ButtonGroup--centered {
+  left: 50%;
+
+  transform: translate(-50%,0);
+}

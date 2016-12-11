@@ -1,0 +1,198 @@
+/*------------------------------------*\
+    Calendar component
+\*------------------------------------*/
+
+@import '~assets/styles/settings/colors';
+@import '~react-date-picker/index.css';
+
+/* temporary color variables */
+$calendar-background-color: $color-mine-shaft;
+$calendar-text-color: $color-white;
+$calendar-border-color: $color-mine-shaft;
+$calendar-arrows-color: $color-jungle-green;
+$calendar-arrows-color-hover: $color-white;
+$calendar-weekdays-text-color: $color-gray;
+$calendar-daycell-background-color-disabled: $color-cod-gray;
+$calendar-daycell-background-color-hover: $color-tundora;
+
+.Calendar {
+
+  // DatePicker style Override
+  // scss-lint:disable SelectorDepth
+  &.date-picker {
+    height: initial;
+    width: 310px;
+
+    padding: 20px;
+
+    background-color: $calendar-background-color;
+    border: 0;
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    color: $calendar-text-color;
+    text-transform: uppercase;
+
+    .dp-table {
+      .dp-row,
+      .dp-cell {
+        border: 0;
+        outline: none;
+      }
+    }
+
+    .dp-header {
+      height: 40px;
+
+      .dp-nav-table {
+        height: 100%;
+      }
+
+      .dp-nav-cell,
+      .dp-cell {
+        outline: none;
+
+        &:hover {
+          background-color: $calendar-background-color;
+        }
+      }
+
+      .dp-prev-nav,
+      .dp-next-nav {
+        position: relative;
+        padding: 0;
+        color: $calendar-background-color;
+
+        &::before {
+          content: '';
+
+          position: absolute;
+          top: 14px;
+          left: 7px;
+
+          width: 11px;
+          height: 11px;
+
+          border-top: 2px solid $calendar-arrows-color;
+          border-left: 2px solid $calendar-arrows-color;
+
+          text-align: center;
+
+          transform: rotate(-45deg);
+        }
+
+        &:hover {
+          &::before {
+            border-top: 2px solid $calendar-arrows-color-hover;
+            border-left: 2px solid $calendar-arrows-color-hover;
+          }
+        }
+      }
+
+      .dp-next-nav {
+        &::before {
+          left: -2px;
+          transform: rotate(135deg);
+        }
+      }
+
+      .dp-nav-view {
+        flex: 13;
+      }
+    }
+
+    .dp-body {
+      .dp-cell {
+        &:hover {
+          background-color: inherit;
+        }
+      }
+
+      .dp-week-day-names {
+        height: 51px;
+
+        border-top: 1px solid $calendar-border-color;
+        border-bottom: 1px solid $calendar-border-color;
+
+        font-size: 11px;
+
+        color: $calendar-weekdays-text-color;
+
+        .dp-week-day-name {
+          height: 49px;
+        }
+      }
+
+      .dp-week {
+        height: 39px;
+
+        padding-top: 10px;
+
+        .dp-day {
+          height: 29px;
+          padding: 0;
+          margin: 0 5px;
+
+          font-weight: normal;
+
+          &:not(.dp-disabled) {
+            &:hover {
+              background-color: $calendar-daycell-background-color-hover;
+              border-radius: 4px;
+            }
+          }
+
+          &.dp-value {
+            background-color: $calendar-arrows-color;
+            border-radius: 4px;
+
+            font-weight: normal;
+
+            color: $calendar-text-color;
+
+            &:hover {
+              background-color: $calendar-arrows-color;
+            }
+          }
+        }
+
+        .dp-current {
+          color: inherit;
+        }
+
+        .dp-disabled {
+          position: relative;
+
+          background-color: $calendar-daycell-background-color-disabled;
+          border-radius: 4px;
+
+          color: $calendar-weekdays-text-color;
+
+          &:not(:first-of-type) {
+            border-radius: 0 4px 4px 0;
+
+            &::before {
+              content: '';
+
+              position: absolute;
+              top: 0;
+              left: -12px;
+
+              width: 12px;
+              height: 100%;
+
+              background-color: $calendar-daycell-background-color-disabled;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.CalendarDropdown {
+  .Dropdown-arrow {
+    background: $calendar-background-color;
+  }
+}

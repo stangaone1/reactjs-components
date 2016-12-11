@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    ToggleButton component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+
+$toggle-btn-border-color: $color-silver;
+$toggle-btn-bg-color: $color-mercury;
+
+$toggle-btn-checked-bg-color: #b2ffd3;
+$toggle-btn-checked-border-color: $color-algae-green;
+
+.ToggleButton {
+  width: 37px;
+  height: 15px;
+
+  display: inline-block;
+
+  overflow: visible;
+
+  background: $toggle-btn-bg-color;
+  border: 1px solid transparent;
+  border-color: $toggle-btn-border-color;
+  border-radius: 15px;
+  user-select: none;
+
+  cursor: pointer;
+
+  transition: background-color .3s;
+
+  &.disabled {
+    background: $toggle-btn-bg-color;
+    border-color: $toggle-btn-border-color;
+  }
+
+
+  &--checked {
+    background: $toggle-btn-checked-bg-color;
+    border: 1px solid transparent;
+    border-color: $toggle-btn-checked-border-color;
+
+    .ToggleButton-toggler {
+      transform: translate(17px, -3px);
+    }
+  }
+}
+
+.ToggleButton-toggler {
+  height: 19px;
+  width: 19px;
+
+  background: $color-white;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+
+  transform: translate(-1px, -3px);
+  transition: background-color .3s;
+}

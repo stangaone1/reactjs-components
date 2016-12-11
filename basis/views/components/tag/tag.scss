@@ -1,0 +1,30 @@
+@import '~assets/styles/settings/colors';
+
+$tag-color: $color-tundora;
+$tag-background: $color-gallery;
+$tag-check-color: $color-jungle-green;
+$tag-remove-color: $color-carnation;
+
+.Tag {
+  padding: 2px 10px;
+  margin: 0 10px 10px 0;;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 12px;
+  color: $tag-color;
+  background: $tag-background;
+  align-items: center;
+
+  .Icon {
+    width: 9px;
+    margin: 0 8px 0 0;
+    fill: $tag-check-color;
+  }
+
+  &-removable {
+    .Icon {
+      fill: $tag-remove-color;
+      cursor: pointer;
+    }
+  }
+}

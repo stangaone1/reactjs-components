@@ -1,0 +1,154 @@
+/*------------------------------------*\
+    Panel component
+\*------------------------------------*/
+@import '~assets/styles/settings/variables';
+
+$panel-margin-bottom: 30px;
+$panel-border-radius: 8px;
+$panel-border-color: $color-silver;
+$panel-header-description-color: $color-gray;
+$panel-header-title-color: $color-mine-shaft;
+
+.PanelHeaderDefault {
+  position: relative;
+  padding: 30px 30px 25px 30px;
+
+  border-bottom: 1px solid $panel-border-color;
+}
+
+.PanelHeader-title {
+  font-family: $font-main;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+
+  color: $panel-header-title-color;
+  text-transform: uppercase;
+}
+
+.PanelHeader-description {
+  margin-top: 15px;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  color: $panel-header-description-color;
+
+  text-transform: none;
+}
+
+.PanelContentDefault {
+  padding: 30px;
+
+  font-family: $font-main;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: $color-gray;
+
+  border-radius: 0 0 $panel-border-radius $panel-border-radius;
+
+  &--noPadding {
+    padding: 0;
+  }
+}
+
+.PanelContent--noPadding {
+  padding: 0;
+}
+
+.PanelContent--noPaddingTopBottom {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.PanelContent--edit {
+  padding: 30px;
+  background-color: $color-alabaster;
+
+  &:not(.PanelContent--noPadding) {
+    padding: 28px 25px 30px 30px;
+  }
+}
+
+.Panel {
+  display: inline-block;
+
+  width: 350px;
+  min-width: 350px;
+
+  background: $color-white;
+
+  border: 1px solid $panel-border-color;
+  border-left: 0;
+
+  border-radius: 0;
+
+  .PanelContent {
+    border-radius: 0;
+  }
+
+  &:last-of-type {
+    border-left: 0;
+    border-top-right-radius: $panel-border-radius;
+    border-bottom-right-radius: $panel-border-radius;
+
+    .PanelContent {
+      border-top-right-radius: $panel-border-radius;
+      border-bottom-right-radius: $panel-border-radius;
+    }
+  }
+
+  &:first-of-type {
+    border-left: 1px solid $panel-border-color;
+    border-top-left-radius: $panel-border-radius;
+    border-bottom-left-radius: $panel-border-radius;
+
+    .PanelContent {
+      border-top-left-radius: $panel-border-radius;
+      border-bottom-left-radius: $panel-border-radius;
+    }
+  }
+
+  &--map {
+    width: 1100px;
+    height: 500px;
+  }
+
+  &--hours {
+    display: block;
+    width: 100%;
+    margin-bottom: 29px;
+    border-radius: 5px;
+
+    &:last-of-type {
+      border-left: 1px solid $color-silver;
+    }
+  }
+
+  &--full {
+    width: 100%;
+
+    border-radius: $panel-border-radius;
+    border: 1px solid $panel-border-color;
+
+    .PanelContent {
+      border-radius: $panel-border-radius;
+    }
+  }
+
+  &--withMargin {
+    margin-bottom: $panel-margin-bottom;
+  }
+}
+
+.PanelGroup {
+  display: flex;
+
+  .Panel {
+    &:not(.Panel--full) {
+      flex: 1;
+    }
+  }
+}

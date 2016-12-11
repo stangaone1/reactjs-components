@@ -1,0 +1,108 @@
+// ------------------------------------ //
+// 	TabArea component
+// ------------------------------------ //
+
+// deps
+@import "~assets/styles/settings/colors";
+
+// settings
+$tabarea-padding: 30px;
+$tabarea-border-size: 1px;
+$tabarea-border-radius: 8px;
+$tabarea-border-color: $color-silver;
+
+$tabarea-item-text: $color-gray;
+$tabarea-item-text--selected: $color-tundora;
+$tabarea-item-border-color: $color-jungle-green;
+
+// tab area
+.TabArea {
+  position: relative;
+
+  padding: ($tabarea-padding - $tabarea-border-size);
+
+  background: $color-white;
+
+  border: $tabarea-border-size solid $tabarea-border-color;
+  border-radius: $tabarea-border-radius;
+
+  .TabList {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: $tabarea-padding;
+    border-bottom: 1px solid $color-mercury;
+
+    &-Navigation {
+      max-height: none;
+    }
+  }
+
+  .TabList-aside {
+    position: absolute;
+    right: ($tabarea-padding - $tabarea-border-size);
+  }
+}
+
+.TabArea--modal {
+  padding: 0;
+  border: 0;
+
+  .TabList {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .TabList-Menu {
+      padding-left: 30px;
+    }
+
+    .Tab-Item a {
+      padding-bottom: 27px;
+      font-weight: normal;
+      text-transform: none;
+    }
+  }
+
+  .TabContent-List {
+    padding: 30px;
+    background-color: $color-alabaster;
+  }
+}
+
+// tab item
+.TabArea .Tab-Item {
+  margin-right: 30px;
+
+  // anchor button
+  a {
+    height: auto;
+
+    padding: 0 0 37px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: $tabarea-item-text;
+
+    line-height: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transform: none;
+  }
+
+  // selected modifier
+  &--selected {
+    a {
+      background: $color-white;
+      color: $tabarea-item-text--selected;
+
+      border-bottom-color: $tabarea-item-border-color;
+    }
+  }
+}
+
+// tab content wrapper
+.TabArea .TabContent-List {
+  border: 0;
+}

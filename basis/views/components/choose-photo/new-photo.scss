@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    NewPhoto component
+\*------------------------------------*/
+@import '~assets/styles/settings/variables';
+
+
+.ChoosePhoto-uploadBox {
+  height: 100%;
+
+  .UploadBox-dropzone {
+    border-radius: 0;
+  }
+
+  .ChoosePhoto-uploadTitle {
+    display: block;
+    margin-bottom: 15px;
+
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  .UploadBox-contentControls {
+    position: relative;
+    top: 35px;
+  }
+}
+
+.Icon--uploadPhoto {
+  width: 98px;
+  height: 95px;
+}

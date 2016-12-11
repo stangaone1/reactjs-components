@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    ModalHeader component
+\*------------------------------------*/
+
+@import "./modal-variables";
+
+.Modal-header {
+  padding: $modal-padding;
+
+  border-bottom: 1px solid $modal-separator-color;
+
+  em {
+    font-style: normal;
+    color: $color-jungle-green;
+  }
+
+  .Modal--padded & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.Modal-title {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+
+  text-transform: uppercase;
+}

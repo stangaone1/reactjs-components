@@ -1,0 +1,184 @@
+/*------------------------------------*\
+    PublishBoard component
+\*------------------------------------*/
+
+@import "~assets/styles/settings/colors";
+@import '~assets/styles/settings/variables.scss';
+
+$publishboard-border-radius: 5px;
+
+$PublishBoard-width: (
+  large: 1392px,
+  medium: 1260px
+);
+
+$PublishBoard-height: (
+  large: 810px,
+  medium: 500px
+);
+
+// le keyframe animation
+@keyframes prevEnter {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+@keyframes prevLeave {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes nextEnter {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+@keyframes nextLeave {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+// title animation
+@keyframes loadingLeave {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes loadingEnter {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.PublishBoard {
+  position: relative;
+
+  width: map-get($PublishBoard-width, 'large');
+  height: map-get($PublishBoard-height, 'large');
+  margin: 0 auto;
+
+  border-radius: $publishboard-border-radius;
+  overflow: hidden;
+
+  &--reversed {
+    .PublishBoard-SidebarFront {
+      transform: rotateY(180deg);
+    }
+    .PublishBoard-SidebarBack {
+      transform: rotateY(0deg);
+    }
+
+    &.PublishBoard--flipped {
+      .PublishBoard-SidebarFront {
+        transform: rotateY(0deg);
+      }
+      .PublishBoard-SidebarBack {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  &--flipped {
+    .PublishBoard-SidebarFront {
+      transform: rotateY(180deg);
+    }
+    .PublishBoard-SidebarBack {
+      transform: rotateY(0deg);
+    }
+  }
+
+  &--medium {
+    width: map-get($PublishBoard-width, 'medium');
+    height: map-get($PublishBoard-height, 'medium');
+  }
+
+
+  &--prevPage {
+    .PublishBoard-Content {
+      &:not(.PublishBoard-ContentProxy) {
+        animation-name: prevEnter;
+      }
+    }
+
+    .PublishBoard-ContentProxy {
+      display: flex;
+      animation-name: prevLeave;
+    }
+  }
+
+  &--nextPage {
+    .PublishBoard-Content {
+      &:not(.PublishBoard-ContentProxy) {
+        animation-name: nextEnter;
+      }
+    }
+
+    .PublishBoard-ContentProxy {
+      display: flex;
+      animation-name: nextLeave;
+    }
+  }
+
+  &--delayed {
+    .PublishBoard-Content {
+      &:not(.PublishBoard-ContentProxy) {
+        transform: translateX(100%);
+        animation-delay: 800ms;
+      }
+    }
+
+    .PublishBoard-LoadingMessage {
+      opacity: 1;
+      animation-name: loadingLeave;
+      animation-delay: 650ms;
+    }
+  }
+
+  &--loading {
+    .PublishBoard-LoadingMessage {
+      opacity: 0 !important;
+      animation-name: loadingEnter;
+      animation-delay: 350ms;
+    }
+
+    &.PublishBoard--prevPage {
+      .PublishBoard-Content {
+        &:not(.PublishBoard-ContentProxy) {
+          transform: translateX(100%);
+          animation-name: none;
+        }
+      }
+    }
+    &.PublishBoard--nextPage {
+      .PublishBoard-Content {
+        &:not(.PublishBoard-ContentProxy) {
+          transform: translateX(-100%);
+          animation-name: none;
+        }
+      }
+    }
+  }
+
+  .Button {
+    margin-right: 0;
+  }
+}
+
+.PublishBoard-LoadingMessage {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  width: 100%;
+
+  opacity: 0;
+
+  color: $color-gray;
+  font-family: $font-main;
+  font-size: 19px;
+  line-height: 19px;
+  text-align: center;
+
+  animation-duration: 100ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}

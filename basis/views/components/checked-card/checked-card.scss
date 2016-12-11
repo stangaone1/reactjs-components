@@ -1,0 +1,63 @@
+@import "~assets/styles/settings/variables";
+
+.CheckedCard {
+  position: relative;
+  height: 250px;
+  width: 350px;
+  border: 1px solid $color-mercury;
+  background-color: $color-alabaster;
+  user-select: none;
+
+  &--select {
+    border-color: $color-jungle-green;
+    background-color: $color-white;
+  }
+
+  &:hover {
+    .CheckedCard-icon {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.Checkbox--checkedCard {
+  position: absolute;
+  top: 15px;
+  right: 7px;
+}
+
+.CheckedCard-icon {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  fill: $color-gray;
+  transition: all .2s;
+
+  &--select {
+    fill: $color-jungle-green;
+  }
+}
+
+.CheckedCard-title {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  color: $color-tundora;
+  text-align: center;
+  font-size: 18px;
+}
+
+.CheckedCard-subtitle {
+  position: absolute;
+  top: 165px;
+  left: 0;
+  right: 0;
+  margin: 0 60px;
+  color: $color-gray;
+  text-align: center;
+  font-size: 13px;
+  font-weight: $fw-normal;
+}

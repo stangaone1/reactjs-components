@@ -1,0 +1,10 @@
+.CheckboxList {
+  // component style goes here;
+  .Checkbox {
+    display: block;
+
+    &:not(:last-of-Type) {
+      margin-bottom: 10px;
+    }
+  }
+}
