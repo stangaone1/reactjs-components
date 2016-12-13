@@ -1,0 +1,20 @@
+// ------------------------------------ //
+//  CLEARFIX helper
+// ------------------------------------ //
+
+%clearfix {
+	&:before,
+	&:after {
+    	content:"";
+    	display:table;
+	}
+
+	&:after  { clear:both; }
+}
+
+// note: we prefer using the term 'clearfix'
+// ... but also 'group' (more friendly, yes?)
+// @TODO: check for 'group' possible style collisions with team ?
+.clearfix {
+	@extend %clearfix;
+}

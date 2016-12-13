@@ -1,0 +1,54 @@
+.SidePreview{
+
+  &-NRN {
+    color: #404040;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: block;
+
+  }
+
+  &-SetupPercentage {
+    color: #262626;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &-SetupMissingWarning {
+    color: #f15a5a;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &-SetupMissingList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #6a6a6a;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+
+    li {
+      margin-top: 15px;
+      &:before {
+        content: " ";
+        position: relative;
+        width: 6px;
+        height: 2px;
+        display: inline-block;
+        top: -3px;
+        background: #ff8686;
+        margin-right: 12px;
+      }
+    }
+  }
+
+}

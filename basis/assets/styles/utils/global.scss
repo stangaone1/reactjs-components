@@ -1,0 +1,54 @@
+// ------------------------------------ //
+//  GLOBAL GENERIC STYLE RULES
+// ------------------------------------ //
+// note: won't need to touch this most of the time
+
+//
+// Box model
+//
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%; // force max fill on document
+}
+
+html {
+  font-size: 62.5%; // set font-size to BASE 10
+}
+
+body {
+  // set global body font-size (most used size as base is 16px)
+  font-size: 12px;
+}
+
+// ensure all text related elements inherit the main font
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+select,
+textarea {
+	font-family: inherit; // inherit global font
+	font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

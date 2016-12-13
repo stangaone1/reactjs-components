@@ -1,0 +1,118 @@
+@import "~assets/styles/settings/colors";
+
+.SortableList {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  user-select: none;
+  background-color: $color-white;
+  line-height: 0;
+
+  .SortableList-card {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .SortableList-card--selected {
+    z-index: 1;
+  }
+
+  .SelectableCard-sortableList {
+    display: inline-block;
+    width: calc(370px + 80px);
+    background-color: $color-white;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .SortableList-arrows {
+    position: absolute;
+    display: inline-block;
+    left: 545px;
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    .SortableList-arrowsLine {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -50px;
+      width: 100px;
+      border-top: 1px solid $color-malibu;
+    }
+
+    svg {
+      fill: $color-malibu;
+      height: 35px;
+    }
+
+    .Icon-websiteFocusDisabled {
+      fill: $color-silver;
+    }
+
+    .SortableList-arrowFirst {
+      .Icon--arrow {
+        transform: rotate(270deg);
+      }
+
+      .SortableList-arrowFirstBorder {
+        position: relative;
+        top: 8px;
+        border-top: 3px solid $color-malibu;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        &--disabled {
+          border-top: 3px solid $color-silver;
+        }
+      }
+    }
+
+    .SortableList-arrowNext {
+      border-top: 1px solid $color-malibu;
+      border-left: 1px solid $color-malibu;
+      border-right: 1px solid $color-malibu;
+      background-color: $color-solitude;
+
+      .Icon--arrow {
+        transform: rotate(270deg);
+      }
+    }
+
+    .SortableList-arrowPrevious {
+      border-left: 1px solid $color-malibu;
+      border-right: 1px solid $color-malibu;
+      border-bottom: 1px solid $color-malibu;
+      background-color: $color-solitude;
+
+      .Icon--arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .SortableList-arrowLast {
+      .Icon--arrow {
+        transform: rotate(90deg);
+      }
+
+      .SortableList-arrowLastBorder {
+        position: relative;
+        top: -8px;
+        border-top: 3px solid $color-malibu;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        &--disabled {
+          border-top: 3px solid $color-silver;
+        }
+      }
+    }
+  }
+}

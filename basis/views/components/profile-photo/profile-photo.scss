@@ -1,0 +1,20 @@
+@import '~assets/styles/settings/variables';
+
+.ProfilePhoto {
+  display: inline-block;
+  cursor: pointer;
+
+  .ProfilePhoto-photo {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid $color-silver;
+    border-radius: 50%;
+
+    background: $color-white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

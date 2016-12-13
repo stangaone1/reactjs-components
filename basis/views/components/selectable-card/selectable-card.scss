@@ -1,0 +1,19 @@
+.SelectableCard {
+  display: block;
+  padding: 13px 30px;
+  cursor: pointer;
+}
+
+.SelectableCard--selected {
+  display: inline-block;
+  box-shadow: 0 9px 43px 0 rgba(61, 61, 61, 0.27);
+  transform: scale(1, 1.1);
+
+  .SelectableCard-image {
+    transform: scale(1, .91);
+  }
+}
+
+.SelectableCard--disabled {
+  cursor: default;
+}

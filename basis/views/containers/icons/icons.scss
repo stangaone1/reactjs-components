@@ -1,0 +1,53 @@
+
+.IconsContainer {
+  padding: 30px;
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: strech;
+  }
+
+  &-icon {
+    text-align: center;
+    background: white;
+    position: relative;
+    padding: 10px;
+    margin: 5px;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    box-shadow: 2px 2px 8px -3px gray;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+
+    h4 {
+      margin: 10px 0 20px 0;
+
+      font-weight: bold;
+
+      text-transform: capitalize;
+    }
+
+    code {
+      font-size: 13px;
+      background: #fafafa;
+    }
+
+    .IconsContainer-IconWrapper {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .Icon--preload {
+      background: black;
+    }
+  }
+}
