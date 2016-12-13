@@ -1,3 +1,3 @@
-var mylocalComponents = require('./dist/mylocal-components');
+var components = require('./dist/components');
 
-module.exports = mylocalComponents;
+module.exports = components;

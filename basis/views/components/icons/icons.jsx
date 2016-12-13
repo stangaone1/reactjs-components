@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Icons extends Component {
+class Icons extends Component {
   render() {
     const style = {
       display: 'none',
