@@ -12,7 +12,7 @@ export default class HoursPanel extends Component {
   static propTypes = {
     days: PropTypes.array.isRequired,
     type: PropTypes.string,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     id: PropTypes.number,
     hoursTitle: PropTypes.object,
     sameProgram: PropTypes.bool,
@@ -109,7 +109,7 @@ export default class HoursPanel extends Component {
     return (
       <Panel className="Panel--hours">
         <PanelHeader className="PanelHeader--hours">
-          <div className="Hours-title">{name ? name : hoursTitle[type]}</div>
+          <div className="Hours-title">{name ? name : hoursTitle[type] ? hoursTitle[type] : 'No name title set'}</div>
           <div className="Hours-subtitle">{daysLength > 1 ? daysLength + ' days' : daysLength + ' day'}</div>
           <div className="Hours-panel">
             {this.renderSwitchButton(daysLength)}

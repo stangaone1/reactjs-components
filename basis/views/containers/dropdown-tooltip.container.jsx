@@ -4,9 +4,9 @@ import DropdownTooltip from 'views/components/dropdown-tooltip';
 export default class DropdownTooltipContainer extends Component {
   render() {
     return (
-      <div>
+      <div style={{marginLeft:300}}>
         <DropdownTooltip size="small" label="short text">
-          <div className="Dropdown-text">Hiring to win</div>
+          <div className="Dropdown-text">Some tooltip</div>
         </DropdownTooltip>
       </div>
     );

@@ -72,6 +72,7 @@
     "jsdom": "^6.5.1",
     "mocha": "^2.3.3",
     "node-sass": "^3.3.3",
+    "normalize.css": "^5.0.0",
     "pre-commit": "^1.1.1",
     "react-addons-test-utils": "^15.0.1",
     "react-transform-catch-errors": "^1.0.2",

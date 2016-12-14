@@ -72,6 +72,7 @@ export default class HoursPanelListContainer extends Component {
   }
 
   render() {
+    console.log('HOURS', HOURS);
     return (<HoursPanelList onHoursChanged={this.onHoursChanged.bind(this)} hours={HOURS}/>);
   }
 }

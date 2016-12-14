@@ -47,7 +47,7 @@ export default class HoursPanelContainer extends Component {
 
   render() {
     return (
-      <HoursPanel {...hoursData}/>
+      <HoursPanel {...hoursData} name="Set days"/>
     );
   }
 }

@@ -36,7 +36,7 @@ export default class HoursPanelList extends Component {
       return (<HoursPanel
         key={index}
         onHoursChanged={this.onHoursChanged}
-        hoursTitle={this.props.hoursTitle}
+        hoursTitle={this.props.hoursTitle || 'title not set'}
         renderOpenButtons={renderOpenButtons}
         name={this.props.name}
         {...hour}/>);

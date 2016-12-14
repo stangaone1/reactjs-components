@@ -27,6 +27,7 @@ export default class DropdownListSearch extends Component {
     return (
       <form className="DropdownList-Search-Container">
         <InputField
+          className="InputField--search"
           placeholder={this.props.label}
           value={this.props.value}
           onChange={this.onChange.bind(this)}
