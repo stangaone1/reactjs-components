@@ -8,21 +8,24 @@ export default class CheckboxExpandableContainer extends Component {
       expandable: [
         {
           title: 'Availability',
-          subTitle: 'Show the website users since when you will offer the Create Your Taste facility',
+          subTitle: 'Title',
           label: 'Display the availability in the page',
           checked: true,
+
         },
         {
           title: 'Availability',
-          subTitle: 'Show the website users since when you will offer the Create Your Taste facility',
+          subTitle: 'Title',
           label: 'Display the availability in the page',
           checked: true,
+
         },
         {
           title: 'Availability',
-          subTitle: 'Show the website users since when you will offer the Create Your Taste facility',
+          subTitle: 'Title',
           label: 'Display the availability in the page',
           checked: false,
+
         },
       ],
     };
@@ -52,7 +55,7 @@ export default class CheckboxExpandableContainer extends Component {
               <CheckboxExpandable
                 key={index}
                 {...expandableElement}
-                onCheckBoxChange={this.onChange.bind(this, index)}
+                onChange={this.onChange.bind(this, index)}
               >
                 <div>
                   Lorem ipsum dolor sit amet, audiam mediocritatem est ex. Ex epicuri patrioque pertinacia pri, sit

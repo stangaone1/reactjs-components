@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext as dragDropContext} from 'react-dnd';
+
 import {Accordion,
   AccordionSection,
   AccordionSectionHeader,
@@ -9,6 +12,7 @@ import Sortable from 'views/components/sortable';
 import {Button} from 'views/components/buttons';
 import { configure, addDecorator, setAddon, storiesOf } from '@kadira/storybook';
 
+@dragDropContext(HTML5Backend)
 export default class AccordionContainer extends Component {
 
   constructor(props) {
@@ -174,6 +178,3 @@ export default class AccordionContainer extends Component {
     );
   }
 }
-
-export const story = storiesOf('AccordionContainer')
-  .add('default', () => (<AccordionContainer />))

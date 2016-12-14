@@ -48,6 +48,7 @@ class ChoosePhoto extends Component {
     this.onSelect = this.onSelect.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.resetState = this.resetState.bind(this);
+    this.uploadPhoto = this.uploadPhoto.bind(this);
   }
 
   resetState(callback) {
@@ -73,6 +74,12 @@ class ChoosePhoto extends Component {
       showChooseButton: !isNull(file),
       file: file,
     });
+  }
+
+  uploadPhoto(section, file) {
+    if(this.props.uploadPhoto) {
+      this.props.uploadPhoto(section, file)
+    }
   }
 
   renderModal() {
@@ -151,6 +158,7 @@ class ChoosePhoto extends Component {
             ...item.props,
             section: this.props.section,
             onSelect: this.onSelect,
+            uploadPhoto: this.uploadPhoto,
           }, item.props && item.props.children)}
         </TabContent>
       );

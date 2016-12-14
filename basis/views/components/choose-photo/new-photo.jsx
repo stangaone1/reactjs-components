@@ -45,7 +45,7 @@ export default class NewPhoto extends Component {
   }
 
   uploadFile(file) {
-    this.props.actions.uploadPhoto(this.props.section, file);
+    this.props.uploadPhoto(this.props.section, file);
   }
 
   render() {

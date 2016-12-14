@@ -9,6 +9,15 @@ export default class CardContainer extends Component {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Curabitur ipsum elit, lobortis egestas augue vel, porttitor
           tincidunt magna.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur ipsum elit, lobortis egestas augue vel, porttitor
+          tincidunt magna.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur ipsum elit, lobortis egestas augue vel, porttitor
+          tincidunt magna.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Curabitur ipsum elit, lobortis egestas augue vel, porttitor
+          tincidunt magna.
         </Card>
       </div>
     );

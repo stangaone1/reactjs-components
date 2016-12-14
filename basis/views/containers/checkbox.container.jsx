@@ -8,21 +8,17 @@ export default class CheckboxContainer extends Component {
     this.state = {
       checked: true,
     };
-
     this._onChange = this._onChange.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
-  _onChange(ev) {
+  _onChange(isChecked) {
     this.setState({
-      checked: ev.target.checked,
+      checked: isChecked,
     });
   }
 
   render() {
+    console.log('this.state.checked.', this.state)
     return (
       <div>
         <Checkbox

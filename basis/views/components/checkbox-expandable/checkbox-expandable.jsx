@@ -40,7 +40,9 @@ export default class CheckboxExpandable extends Component {
         <div className="CheckboxExpandable-title">{title}</div>
         <div className="CheckboxExpandable-subtitle">{subTitle}</div>
         <Checkbox
+          {...props}
           {...field}
+          checked={checked}
           label={label}
           className="Checkbox--expandableElement"
         />
