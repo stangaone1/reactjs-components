@@ -8,7 +8,10 @@ const SectionCardFooter = (props)=> {
   let contentElement;
   if (buttonTitle && buttonTitle.length) {
     const Button = require('views/components/buttons/button');
-    buttonElement = (<Button onClick={onCardAction} className="SectionCardFooter-button">{buttonTitle}</Button>);
+    buttonElement = null ;
+    if(Button) {
+      buttonElement = (<Button onClick={onCardAction} className="SectionCardFooter-button">{buttonTitle}</Button>);
+    }
   }
   if (content && content.length) {
     contentElement = (<div className="SectionCardFooter-content">{content}</div>);

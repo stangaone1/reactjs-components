@@ -10,7 +10,7 @@ export const columns = [
     hasLink: true,
     width: 200,
     visible: true,
-    fixed: false,
+    fixed: true,
     sortable: true,
   },
   {

@@ -7,16 +7,18 @@ export default class TableContainer extends Component {
   render() {
     if (!rows.length && !columns.length) return null;
 
-    return (<Table rows={rows}
-                   maxWidth={1250}
-                   isStriped={false}
-                   columns={columns}
-                   customRenderColumn="setup"
-                   customRenderer={this.customRenderCell}
-                   onColumnSort={this.onColumnSort}
-                   actionable
-                   actionsColLabel="Actions"
-                   selectableComponent={Checkbox}/>);
+    return (
+      <div style={{width:900}}>
+        <Table rows={rows}
+               maxWidth={800}
+               isStriped={false}
+               columns={columns}
+               customRenderColumn="setup"
+               onColumnSort={this.onColumnSort}
+               actionable
+               actionsColLabel="Actions"
+               selectableComponent={Checkbox}/>
+      </div>);
   }
 }
 

@@ -25,7 +25,9 @@ export default class SelectableCardContainer extends Component {
         <SelectableCard card={card}
                         selected={this.state.selected}
                         onSelect={this.onCardSelect}
-        />
+        >
+          <div>CHILDREN</div>
+        </SelectableCard>
       </div>
     );
   }

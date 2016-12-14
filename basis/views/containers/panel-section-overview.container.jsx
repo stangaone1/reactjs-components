@@ -9,7 +9,7 @@ export default class PanelSectionOverviewContainer extends Component {
   getSectionOverview() {
     return [{
       id: 1,
-      name: 'Restaurant Info',
+      name: 'Info',
       pages: [
         {
           id: 1,
@@ -27,7 +27,7 @@ export default class PanelSectionOverviewContainer extends Component {
       ],
     }, {
       id: 2,
-      name: 'Look and feel',
+      name: 'Another one',
       pages: [
         {
           id: 1,

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext as dragDropContext} from 'react-dnd';
+
 import Sortable from 'views/components/sortable';
+
 import './sortable.scss';
 
+@dragDropContext(HTML5Backend)
 export default class SortableContainer extends Component {
 
   onSort(orderData) {

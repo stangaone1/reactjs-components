@@ -6,7 +6,7 @@ export default class RadioListContainer extends Component {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.state = {
-      value: 'Crew',
+      value: 'test3',
     };
   }
 
@@ -19,7 +19,7 @@ export default class RadioListContainer extends Component {
   render() {
     return (
       <div style={{backgroundColor: 'white'}}>
-        <RadioList options={['test','test2','Crew']} value={this.state.value} onChange={this.onChange} />
+        <RadioList options={['test','test2','test3']} value={this.state.value} onChange={this.onChange} />
       </div>
     );
   }
