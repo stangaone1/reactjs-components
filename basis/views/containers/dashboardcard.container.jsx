@@ -34,6 +34,7 @@ export default class DashboardCardContainer extends Component {
           backgroundImageSrc={imageSrcs[0]}
           onOptionClick={this._editCardClick.bind(this, 0)}
         />
+        <br/>
         <DashboardCard
           backgroundImageSrc={imageSrcs[1]}
           onOptionClick={this._editCardClick.bind(this, 1)}
