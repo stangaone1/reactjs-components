@@ -90,6 +90,7 @@ export default class Table extends Component {
   componentDidUpdate(prevProps, prevState) {
     this.hasScroll();
     const columnsFixed = this.getFixedColumns();
+    console.log('columnsFixed', columnsFixed);
     if (!this.state.dynamicTable || !columnsFixed.length || this.state.dynamicTable === prevState.dynamicTable) return;
     const borderLeftWidth = 2;
     const tableElement = findDOMNode(this);
@@ -385,9 +386,12 @@ export default class Table extends Component {
     if (this.state.dynamicTable) {
       const columnsElementsUnFixed = columns.filter(colData => !colData.fixed);
       const columnsElementsFixed = this.getFixedColumns();
+      console.log('columnsElementsFixedcolumnsElementsFixed', columnsElementsFixed);
       if (columnsElementsFixed.length) {
-        const fixedTables = columnsElementsFixed.length ? this.groupByConsecutiveKeyValues(columnsElementsFixed, 'index') : [];
 
+        const fixedTables = columnsElementsFixed.length ? this.groupByConsecutiveKeyValues(columnsElementsFixed, 'index') : [];
+        console.log('fixedTables', fixedTables);
+        console.log('fixedTables.length', fixedTables.length);
         invariant(fixedTables.length < 3, 'Only support fixed tables for table margin columns');
 
         const [fixedLeftTableData, fixedRightTableData] = fixedTables;

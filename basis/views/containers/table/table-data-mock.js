@@ -59,6 +59,7 @@ export const columns = [
     name: 'Id',
     row: 'id',
     width: 100,
+    fixed: false,
     visible: true,
     sortable: true,
   },
@@ -66,6 +67,7 @@ export const columns = [
 export const rows = [
   {
     'id': 0,
+    'index': 0,
     'name': 'Dortha OReilly Ms.',
     'link': 'http://wwww.Dwight Ledner.com',
     'address': '324 Frankie Valleys',
@@ -77,6 +79,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 1,
+    'index': 1,
     'name': 'Romaine Robel',
     'link': 'http://wwww.Alexandra McClure.com',
     'address': '8315 Israel Skyway',
@@ -88,6 +91,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 2,
+    'index': 2,
     'name': 'Cole Marvin',
     'link': 'http://wwww.Jessy Stokes.com',
     'address': '9687 Nayeli Crescent',
@@ -99,6 +103,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 3,
+    'index': 3,
     'name': 'Keenan Bergnaum',
     'link': 'http://wwww.Assunta Kerluke.com',
     'address': '9819 Simonis Creek',
@@ -110,6 +115,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 4,
+    'index': 4,
     'name': 'Burley Hermann',
     'link': 'http://wwww.Gunner Mosciski.com',
     'address': '0191 Champlin Manors',
@@ -121,6 +127,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 5,
+    'index': 5,
     'name': 'Reese VonRueden',
     'link': 'http://wwww.Bonnie Champlin.com',
     'address': '88061 Wilderman Run',
@@ -132,6 +139,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 6,
+    'index': 6,
     'name': 'Aidan Luettgen',
     'link': 'http://wwww.Verla Runolfsdottir.com',
     'address': '64672 Marilou Harbor',
@@ -143,6 +151,7 @@ export const rows = [
     'actionOpened': false,
   }, {
     'id': 7,
+    'index': 7,
     'name': 'Lolita Nitzsche',
     'link': 'http://wwww.Gerda Murphy.com',
     'address': '6250 Cloyd Vista',

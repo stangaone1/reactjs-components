@@ -110,7 +110,9 @@ export default class VideoSelector extends Component {
   }
 
   componentWillMount() {
-    this.props.getRecentVideoGallery(this.props.section);
+    if (this.props.getRecentVideoGallery) {
+      this.props.getRecentVideoGallery(this.props.section);
+    }
 
     if (!isEmpty(this.props.value)) {
       this.onGalleryVideoSelected(this.props.value);
@@ -168,14 +170,15 @@ export default class VideoSelector extends Component {
   uploadFile(file) {
     const data = new FormData();
     data.append('file', file.binaryFile);
-
-    this.props.uploadVideo(this.props.section, data, true).then(() => {
-      this.setState({
-        video: this.props.videoGallery.newVideo,
-        gallery: this.props.videoGallery.newVideo,
-        isChooseButtonDisabled: false,
+    if (this.props.uploadVideo) {
+      this.props.uploadVideo(this.props.section, data, true).then(() => {
+        this.setState({
+          video: this.props.videoGallery.newVideo,
+          gallery: this.props.videoGallery.newVideo,
+          isChooseButtonDisabled: false,
+        });
       });
-    });
+    }
   }
 
   renderNewVideoTab() {

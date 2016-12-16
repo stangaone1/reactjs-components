@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ToggleCheckbox} from 'views/components/toggle-checkbox';
+import ToggleCheckbox from 'views/components/toggle-checkbox';
 
 class ToggleCheckboxContainer extends Component {
 

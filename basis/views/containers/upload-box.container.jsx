@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {UploadBox} from 'views/components/upload-box';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext as dragDropContext} from 'react-dnd';
 
+@dragDropContext(HTML5Backend)
 export default class UploadBoxContainer extends Component {
   _onFileAdd(file) {
     console.log('add file triggered', file);

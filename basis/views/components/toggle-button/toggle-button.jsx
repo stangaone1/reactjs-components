@@ -15,7 +15,7 @@ export default class ToggleButton extends Component {
       className,
       'ToggleButton',
       {'ToggleButton--checked': checked},
-      {'disabled': disabled},
+      {'disabled': disabled}
     );
     return (
       <div {...otherProps}

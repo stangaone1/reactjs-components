@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import {DragWidgetContainer, DragWidgetItem} from 'views/components/draggable-widgets';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext as dragDropContext} from 'react-dnd';
 
 import update from 'react/lib/update';
+import {DragWidgetContainer, DragWidgetItem} from 'views/components/draggable-widgets';
+
 
 import './item.scss';
 
@@ -44,6 +47,8 @@ const boxStyle = {
 };
 
 let lastId = 999;
+
+@dragDropContext(HTML5Backend)
 export default class DragWidgetDemo extends Component {
   constructor(props) {
     super(props);
