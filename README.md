@@ -1,6 +1,7 @@
 # React dump components
 # Install
 ```
+
  npm install stanga1-react-components --save
  
 ```
