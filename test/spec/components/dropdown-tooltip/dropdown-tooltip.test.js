@@ -6,11 +6,6 @@ import {spy} from 'sinon';
 
 describe('DropdownTooltip', () => {
   describe('display', () => {
-    it('should render as Dropdown', () => {
-      const component = shallow(<DropdownTooltip />);
-      expect(component.is('Dropdown')).to.be.true;
-    });
-
     it('should render with class DropdownTooltip', () => {
       const component = shallow(<DropdownTooltip />);
       expect(component.hasClass('DropdownTooltip')).to.be.true;

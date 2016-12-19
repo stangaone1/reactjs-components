@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import shallowCompare from 'react-addons-shallow-compare';
 import cx from 'classnames';
-import listensToClickOutside from 'react-click-outside';
 
 import NotificationBubble from 'views/components/notification-bubble';
 
@@ -13,7 +12,6 @@ const BUTTON_BORDER = 1;
 const BODY_ARROW = 14;
 const ARROW_OFFSET = BUTTON_PADDING / 2 + BODY_ARROW / 2 + BUTTON_BORDER;
 
-@listensToClickOutside
 export default class Dropdown extends Component {
   static displayName = 'Dropdown';
 
@@ -56,6 +54,14 @@ export default class Dropdown extends Component {
       open: false,
       arrowPosition: ARROW_OFFSET,
     };
+  }
+
+  componentWillMount() {
+    if (this.props.open) {
+      this.setState({
+        open: this.props.open
+      })
+    }
   }
 
   componentDidMount() {

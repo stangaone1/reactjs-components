@@ -1,2 +1,2 @@
-import ButtonMultiple from './button-multiple.jsx';
+import ButtonMultiple from './button-multiple-wrapper.jsx';
 export default ButtonMultiple;

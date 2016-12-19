@@ -1,7 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import cx from 'classnames';
-import listensToClickOutside from 'react-click-outside';
-
 
 import Dropdown from 'views/components/dropdown';
 import SearchableDropdownList from 'views/components/dropdown-list/searchable-dropdown-list';
@@ -11,7 +9,6 @@ import './dropdown-selector.scss';
 //
 //  Dropdown Selector
 //
-@listensToClickOutside
 export default class DropdownSelector extends Component {
   static propTypes = {
     size: PropTypes.string,

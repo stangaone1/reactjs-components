@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonExpandible from 'views/components/button-expandible';
+import ButtonExpandible from 'views/components/button-expandible/button-expandible';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import {spy} from 'sinon';

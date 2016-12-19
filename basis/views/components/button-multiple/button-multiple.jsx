@@ -1,11 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import cx from 'classnames';
 import shallowCompare from 'react-addons-shallow-compare';
-import listensToClickOutside from 'react-click-outside';
 
 import './button-multiple.scss';
 
-@listensToClickOutside
 export default class ButtonMultiple extends Component {
   static propTypes = {
     className: PropTypes.string,

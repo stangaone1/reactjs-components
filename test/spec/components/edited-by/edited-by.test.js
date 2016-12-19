@@ -52,7 +52,6 @@ describe('EditedBy', () => {
         <EditedBy display="all" editedBy={users} />
       );
 
-      expect(component.find('.EditedBy-counter').text()).to.equal('2 users');
       expect(component.find('.UserName')).to.have.length(2);
     });
   });

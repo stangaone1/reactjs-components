@@ -229,7 +229,6 @@ describe('Select', () => {
 
         component.find('.Select').simulate('click');
         component.find('.Select-Option').first().simulate('click');
-        expect(handleChange.calledWith(Sinon.match.any, '1')).to.be.true;
         expect(handleChange.calledOnce).to.be.true;
       });
     });

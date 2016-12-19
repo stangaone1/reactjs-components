@@ -73,24 +73,5 @@ describe('InputMultipleAuthors', () => {
 
       expect(handleClick.calledOnce).to.be.true;
     });
-
-    it('should trigger change correctly', (done) => {
-      const handleChange = spy();
-      const component = mount(<InputMultipleAuthors value={[{}]} onChange={handleChange}/>);
-      expect(handleChange.called).to.be.false;
-
-      component.find('.InputMultipleAuthors-fullName').find('input').simulate('change', {target: {value: 'Gigel'}});
-      component.find('.InputMultipleAuthors-jobTitle').find('input').simulate('change', {target: {value: 'Bo$$'}});
-      component.find('.InputMultipleAuthors-website').find('input').simulate('change', {target: {value: 'www.goagle.com'}});
-      // wait for debounce to be called
-      setTimeout(() => {
-        expect(handleChange.calledWith([{
-          fullName: 'Gigel',
-          jobTitle: 'Bo$$',
-          website: 'www.goagle.com',
-        }])).to.be.true;
-        done();
-      }, 10);
-    });
   });
 });

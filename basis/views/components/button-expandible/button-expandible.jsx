@@ -1,13 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import cx from 'classnames';
 import shallowCompare from 'react-addons-shallow-compare';
-import listensToClickOutside from 'react-click-outside';
 
 import {Button} from 'views/components/buttons';
 
 import './button-expandible.scss';
 
-@listensToClickOutside
 export default class ButtonExpandible extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -59,30 +57,32 @@ export default class ButtonExpandible extends Component {
 
   renderChildren() {
     const {children} = this.props;
-    const buttonsClasses = cx('ButtonExpandible-container');
+    if (children) {
+      const buttonsClasses = cx('ButtonExpandible-container');
 
-    let visible = this.state.visible;
-    if (this.props.visible !== null && this.props.visible !== undefined) {
-      visible = this.props.visible && this.state.visible;
-    }
-
-    let isError = false;
-
-    children.map((child) => {
-      if (child.props.error) {
-        isError = true;
+      let visible = this.state.visible;
+      if (this.props.visible !== null && this.props.visible !== undefined) {
+        visible = this.props.visible && this.state.visible;
       }
-    });
-    if (isError) {
-      visible = true;
-    }
 
-    if (visible) {
-      return (
-        <div className={buttonsClasses}>
-          {children}
-        </div>
-      );
+      let isError = false;
+
+      children.map((child) => {
+        if (child.props.error) {
+          isError = true;
+        }
+      });
+      if (isError) {
+        visible = true;
+      }
+
+      if (visible) {
+        return (
+          <div className={buttonsClasses}>
+            {children}
+          </div>
+        );
+      }
     }
   }
 
@@ -92,7 +92,7 @@ export default class ButtonExpandible extends Component {
       label,
       long,
       ...props,
-    } = this.props;
+      } = this.props;
     const componentClasses = cx('ButtonExpandible', className);
 
     let visible = this.state.visible;

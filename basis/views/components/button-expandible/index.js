@@ -1,2 +1,2 @@
-import ButtonExpandible from './button-expandible.jsx';
-export default ButtonExpandible;
+import ButtonExpandibleWrapper from './button-expandible-wrapper';
+export default ButtonExpandibleWrapper;

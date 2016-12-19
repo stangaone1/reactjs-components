@@ -8,7 +8,7 @@ describe('PhotoSelector', () => {
   describe('display', () => {
     it('should render as div', () => {
       const component = shallow(<PhotoSelector />);
-      expect(component.is('div')).to.be.true;
+      expect(component.is('ChoosePhoto')).to.be.true;
     });
 
     it('should render with class PhotoSelector', () => {

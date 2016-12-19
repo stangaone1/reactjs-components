@@ -17,13 +17,13 @@ const data = [
 
 const dropdownGroup = (
   <DropdownGroup>
-    <Dropdown label="Label1">
+    <Dropdown label="Label1" open={false}>
       <DropdownMenu items={data}/>
     </Dropdown>
-    <Dropdown label="Label2">
+    <Dropdown label="Label2" open={false}>
       <DropdownMenu items={data}/>
     </Dropdown>
-    <Dropdown label="Label3">
+    <Dropdown label="Label3" open={false}>
       <DropdownMenu items={data}/>
     </Dropdown>
   </DropdownGroup>
@@ -85,7 +85,7 @@ describe('DropdownGroup', () => {
         </DropdownGroup>
       );
       const dropdownGroupComponent = utils.shallowlyRenderedOutput(dropdownGroup);
-      expect(dropdownGroupComponent.props.style.width).to.equal(0);
+      expect(dropdownGroupComponent.props.style.width).to.equal(undefined);
       expect(dropdownGroupComponent.props.className).to.contain(' Dropdown-group--hidden');
     });
 

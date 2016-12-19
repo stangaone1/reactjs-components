@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonMultiple from 'views/components/button-multiple';
+import ButtonMultiple from 'views/components/button-multiple/button-multiple';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import {spy} from 'sinon';

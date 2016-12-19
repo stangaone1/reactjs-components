@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from 'views/components/dropdown';
+import Dropdown from 'views/components/dropdown/dropdown';
 import {shallow, mount} from 'enzyme';
 import {expect} from 'chai';
 import {spy} from 'sinon';
@@ -46,7 +46,7 @@ describe('Dropdown', () => {
   it('displays the body when open is true', () => {
     const component = shallow(dropdown);
 
-    expect(component.find('.Dropdown-body')).to.have.length(1);
+    expect(component.find('.Dropdown-button--open')).to.have.length(1);
   });
 
   it('hides the body when open is false', () => {

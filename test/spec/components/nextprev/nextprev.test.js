@@ -4,7 +4,7 @@ import { shallow, render, mount } from 'enzyme';
 import {expect} from 'chai';
 import {spy} from 'sinon';
 
-import {NextPrev} from 'views/components/nextprev';
+import NextPrev from 'views/components/nextprev';
 import {Button} from 'views/components/buttons';
 
 
