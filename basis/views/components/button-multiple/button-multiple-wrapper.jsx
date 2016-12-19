@@ -7,7 +7,7 @@ import ButtonMultiple from './button-multiple.jsx';
 @listensToClickOutside
 class ButtonMultipleWrapper extends Component {
   render() {
-    return <ButtonExpandible {...this.props}></ButtonExpandible>
+    return <ButtonMultiple {...this.props}>{this.props.children}</ButtonMultiple>
   }
 }
 export default ButtonMultipleWrapper;
