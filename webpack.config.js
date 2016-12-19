@@ -49,7 +49,7 @@ if (env === 'development') {
 if (env === 'production') {
   config.plugins.push(
     new webpack.BannerPlugin('App ' + appName + ' version: ' + appVersion, {entryOnly: true}),
-    // new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -136,7 +136,7 @@ if (env === 'development') {
       test: /\.(scss|css)$/,
       loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 version!sass-loader?outputStyle=expanded&' +
       'includePaths[]=' + path.join(__dirname, '/basis/styles') + '&' +
-      '&includePaths[]='+ path.resolve(__dirname, 'node_modules', 'basis'),
+      '&includePaths[]=' + path.resolve(__dirname, 'node_modules', 'basis'),
     })
 }
 
@@ -161,12 +161,12 @@ if (env === 'production') {
       test: /\.(scss|css)$/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?browsers=last 2 version!sass-loader?outputStyle=expanded&' +
         'includePaths[]=' + path.join(__dirname, '/basis/styles') + '&' +
-        '&includePaths[]='+ path.resolve(__dirname, 'node_modules', 'basis'))
+        '&includePaths[]=' + path.resolve(__dirname, 'node_modules', 'basis'))
     })
 }
 
 module.exports = {
-  context:path.join(__dirname, 'basis'),
+  context: path.join(__dirname, 'basis'),
   entry: {
     'components': 'components.js',
   },
@@ -197,13 +197,13 @@ module.exports = {
   externals: {
     "react": "react",
     "react-addons-shallow-compare": "react-addons-shallow-compare",
-    "moment" : "moment",
-    "react-dnd" : "react-dnd",
-    "react-quill" : "react-quill",
-    "react-modal" : "react-modal",
-    "react-dom" : "react-dom",
-    "lodash" : "lodash",
-    "react-dnd-html5-backend" : "react-dnd-html5-backend",
+    "moment": "moment",
+    "react-dnd": "react-dnd",
+    "react-quill": "react-quill",
+    "react-modal": "react-modal",
+    "react-dom": "react-dom",
+    "lodash": "lodash",
+    "react-dnd-html5-backend": "react-dnd-html5-backend",
     "classnames": "classnames",
   },
 

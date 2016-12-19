@@ -71,8 +71,6 @@ class Gallery extends Component {
       return current;
     });
 
-    console.log('Active filters', activeFilters);
-
     // return photos
     // const activePhotos = filter(photos, {category: 'Jobs'});
   }

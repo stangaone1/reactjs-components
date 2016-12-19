@@ -1,6 +1,6 @@
 {
   "name": "stanga1-react-components",
-  "version": "1.0.19",
+  "version": "1.0.22",
   "description": "React UI Kit",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,11 @@
     "build": "npm run clean && NODE_ENV=production webpack --progress --colors",
     "lint": "eslint app tests test --ext .js --ext .jsx",
     "check": "npm run lint && npm run test",
-    "test": "NODE_PATH=./app mocha --compilers jsx:test/utils/compiler.js --require ./test/utils/setup.js --recursive --ui bdd",
+    "test": "NODE_PATH=./basis mocha --compilers jsx:test/utils/compiler.js --require ./test/utils/setup.js --recursive --ui bdd",
     "test:watch": "npm test -- --watch",
     "test-coverage": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha  --compilers jsx:test/utils/compiler.js --require ./test/utils/setup.js",
     "clean": "rm -rf dist",
     "storybook": "start-storybook -p 9001"
-  },
-  "pre-commit": {
-    "run": "lint",
-    "silent": true
   },
   "repository": {
     "type": "git",
@@ -73,7 +69,6 @@
     "mocha": "^2.3.3",
     "node-sass": "^3.3.3",
     "normalize.css": "^5.0.0",
-    "pre-commit": "^1.1.1",
     "react-addons-test-utils": "^15.0.1",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
